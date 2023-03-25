@@ -1,7 +1,7 @@
 <div class="mt-4">
   <form method="POST" action="">
     <div class="form-group">
-      <label for="search-input">Từ khóa</label>
+      <label for="search-input">Từ khóa tìm kiếm</label>
 
       <input
         name="q"
@@ -13,10 +13,17 @@
     </div>
     <div class="form-group">
       <label for="gioitinh-input">Chọn giới tính</label>
-      <select name="Gioitinh" class="form-control" id="gender-input">
+      <select
+        name="Gioitinh"
+        class="form-control"
+        id="gender-input"
+        style="cursor: pointer;"
+      >
+        <option value="None">--Chọn Giới Tính--</option>
         <option value="Nam">Nam</option>
         <option value="Nữ">Nữ</option>
-        <option value="Khác">Gay</option>
+        <option value="Khác">Khác</option>
+
       </select>
     </div>
 
