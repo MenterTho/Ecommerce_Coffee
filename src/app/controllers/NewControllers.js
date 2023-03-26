@@ -3,9 +3,9 @@ class NewControllers {
   index(req, res) {
     res.render("news");
   }
-  // [GET] /news/:slug
+  // [GET] /:slug
   show(req, res) {
-    res.send("PHIÊN BẢN NEW MỚI CẬP NHẬT");
+    res.send("PHIÊN BẢN NEWS MỚI CẬP NHẬT");
   }
 }
 
