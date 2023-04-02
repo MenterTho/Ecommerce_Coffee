@@ -1,7 +1,8 @@
 class NewControllers {
     // [GET] /news
     index(req, res) {
-        res.render('news');
+        const title = 'News';
+        res.render('news', { title });
     }
     // [GET] /:slug
     show(req, res) {
