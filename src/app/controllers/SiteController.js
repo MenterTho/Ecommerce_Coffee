@@ -1,4 +1,5 @@
 const Coffee = require('../models/Coffee');
+const url = require('url');
 const { mutipleMogooseToObject } = require('../../util/mongoose');
 class SiteController {
     //  Đây là đường truyền cho trang web home, bên file kia muốn đổi tên nào cũng được
@@ -18,8 +19,14 @@ class SiteController {
     // [GET] /search
     search(req, res) {
         const title = 'Search';
+        const parsedUrl = url.parse(req.url, true);
+        const searchTerm = parsedUrl.query.q;
+        const gioitinh = parsedUrl.query.Gioitinh;
+
         res.render('search', {
             title,
+            searchTerm,
+            gioitinh,
         });
     }
     // [GET] /product
