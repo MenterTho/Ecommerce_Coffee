@@ -6,7 +6,8 @@
   "scripts": {
     "fixcode": "lint-staged",
     "start": "nodemon --inspect src/index.js",
-    "watch": "node-sass --watch src/resources/scss/app.scss src/public/css/app.css",
+    "login": "node-sass --watch src/resources/scss/login.scss src/public/css/login.css",
+    "app": "node-sass --watch src/resources/scss/app.scss src/public/css/app.css",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install"
   },
@@ -30,9 +31,12 @@
     "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
   },
   "dependencies": {
+    "body-parser": "^1.20.2",
     "express": "^4.18.2",
     "express-handlebars": "^7.0.1",
-    "mongoose": "^7.0.3"
+    "express-session": "^1.17.3",
+    "mongoose": "^7.0.3",
+    "mongoose-slug-generator": "^1.0.4"
   },
   "devDependencies": {
     "husky": "^8.0.3",

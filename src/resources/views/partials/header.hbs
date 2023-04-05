@@ -1,51 +1,137 @@
-<header id="header">
-  <a href="/" class="logo">
-    Coffee
-    <img
-      src="https://cdn-icons-png.flaticon.com/512/763/763695.png"
-      style="width: 50px"
-      alt="LOGO"
-    />
-    CAT
-  </a>
-  <div class="menu mt-3">
-    <ul class="navigation">
-      <li><a class="a" href="/">Home</a></li>
-      <li><a class="a" href="/news">News</a></li>
-      <li><a class="a" href="/products">Products</a></li>
-      <li><a class="a" href="#">Set-Table</a></li>
-      <li><a class="a" href="#">Shops</a></li>
-      <li><a href="#">
-          <div class="dropdown">
-            <button class="dropbtn"><ion-icon
-                name="person-circle-outline"
-              ></ion-icon></button>
-            <div class="dropdown-content">
-              <a class="" href="#">Order history</a>
-              <a class="" href="#">Profile</a>
-              <a class="" style="border-top: 1px solid white;" href="#">Sign Out</a>
-            </div>
-          </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a title="Meow meow" class="navbar-brand" href="/"><img
+        src="https://cdn-icons-png.flaticon.com/512/2173/2173478.png"
+        style="width: 50px"
+        alt="LOGO"
+      /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            title="Trang chủ"
+            class="nav-link navmenu a"
+            aria-current="page"
+            href="/"
+          >Home</a>
+        </li>
+        <li class="nav-item">
+          <a title="Tin tức" class="nav-link navmenu a" href="/news">News</a>
+        </li>
+        <li class="nav-item">
+          <a
+            title="Sản phẩm"
+            class="nav-link navmenu a"
+            href="/products"
+          >Products</a>
+        </li>
+        <li class="nav-item">
+          <a title="Đặt bàn" class="nav-link navmenu a" href="#">Set-Table</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            title="Tiện ích"
+            class="nav-link navmenu a dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            More
+          </a>
+          <ul
+            class="dropdown-menu drop-menu-more bg-dark"
+            aria-labelledby="navbarDropdown"
+          >
+            <li><a title="Cửa hàng" class="dropdown-item" href="#">Shops
+              </a></li>
+            <li><a
+                title="Câu truyện thương hiệu"
+                class="dropdown-item"
+                href="#"
+              >Brand story</a></li>
+            <li><a
+                title="Tìm kiếm"
+                class="dropdown-item"
+                href="/search"
+              >Search</a></li>
+              {{#if session.user.access }}
+            <li><hr class="dropdown-divider bg-light" /></li>
+            <li><a title="Bản điều khiển" class="dropdown-item" href="#">Admin
+                dashboard</a></li>
+            {{/if}}
+          </ul>
+        </li>
+      </ul>
+       <button
+          title="Giỏ hàng"
+          type="button"
+          class="btn btn-outline-light me-2 btnCalo"
+        >
+          <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+      {{#if session.user}}
+      <div class="dropdown text-end">
+        <a
+          href="#"
+          class="d-block link-dark text-decoration-none dropdown-toggle"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img 
+            src="{{session.user.image}}"
+            alt="mdo"
+            width="32"
+            height="32"
+            class="rounded-circle"
+          />
         </a>
-      </li>
-      <li><a class="a" style="font-size:18px" href="#"><ion-icon
-            name="cart-outline"
-          ></ion-icon></a></li>
-      {{! <li><a class="a" href="#">Login </a></li> }}
+          <ul class="dropdown-menu text-small bg-dark ">
+            <li><a class="dropdown-item dropimg_user" href="#"></a></li>
+            <li><a class="dropdown-item dropimg_user" href="#">Profile</a></li>
+            <li><a class="dropdown-item dropimg_user" href="#">Purchase history</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item logout" href="/login/logOut">Sign out <i class="fa-solid fa-right-from-bracket"></i></a></li>
+          </ul>
+          {{else}}
+      <div class="text-middle" style="margin-right: 10px;">
 
-    </ul>
-    <div class="search">
-      <span class="icon">
-        <ion-icon name="search-outline" class="searchBtn"></ion-icon>
-        <ion-icon name="close-outline" class="closeBtn"></ion-icon>
-      </span>
+        <a href="/login">
+          <button
+            title="Đăng nhập"
+            type="button"
+            class="btn btn-warning btnCalo"
+          >Login</button>
+        </a>
+      </div>
+        {{/if}}
+      </div>
+      <form action="/search" class="d-flex">
+        <input
+          name="q"
+          required
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button title="Tìm kiếm" class="btn searchBtn" type="submit"><i
+            class="fa-solid fa-magnifying-glass"
+          ></i></button>
+      </form>
+
     </div>
-    <ion-icon name="menu-outline" class="menuBtn"></ion-icon>
   </div>
-  <div class="searchBox">
-    <form action="/search">
-      <input name="q" type="text" placeholder="Search..." />
-    </form>
-  </div>
-
-</header>
+</nav>
