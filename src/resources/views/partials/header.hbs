@@ -24,20 +24,20 @@
             class="nav-link navmenu a"
             aria-current="page"
             href="/"
-          >Home</a>
+          >Trang chủ</a>
         </li>
         <li class="nav-item">
-          <a title="Tin tức" class="nav-link navmenu a" href="/news">News</a>
+          <a title="Tin tức" class="nav-link navmenu a" href="/news">Tin tức</a>
         </li>
         <li class="nav-item">
           <a
             title="Sản phẩm"
             class="nav-link navmenu a"
             href="/products"
-          >Products</a>
+          >Sản phẩm</a>
         </li>
         <li class="nav-item">
-          <a title="Đặt bàn" class="nav-link navmenu a" href="#">Set-Table</a>
+          <a title="Đặt bàn" class="nav-link navmenu a" href="#">Đặt bàn</a>
         </li>
         <li class="nav-item dropdown">
           <a
@@ -49,25 +49,25 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            More
+            Thông tin thêm
           </a>
           <ul
-            class="dropdown-menu drop-menu-more bg-dark"
+            class="dropdown-menu drop-menu-more"
             aria-labelledby="navbarDropdown"
           >
-            <li><a title="Cửa hàng" class="dropdown-item" href="#">Shops
+            <li><a title="Cửa hàng" class="dropdown-item" href="#">Cửa hàng
               </a></li>
             <li><a
                 title="Câu truyện thương hiệu"
                 class="dropdown-item"
                 href="#"
-              >Brand story</a></li>
+              >Câu chuyện thương hiệu</a></li>
             <li><a
                 title="Tìm kiếm"
                 class="dropdown-item"
                 href="/search"
-              >Search</a></li>
-              {{#if session.user.access }}
+              >Tìm kiếm</a></li>
+              {{#if session.user.access}}
             <li><hr class="dropdown-divider bg-light" /></li>
             <li><a title="Bản điều khiển" class="dropdown-item" href="#">Admin
                 dashboard</a></li>
@@ -98,21 +98,23 @@
             class="rounded-circle"
           />
         </a>
-          <ul class="dropdown-menu text-small bg-dark ">
+          <ul class="dropdown-menu text-small">
             <li><a class="dropdown-item dropimg_user" href="#"></a></li>
-            <li><a class="dropdown-item dropimg_user" href="#">Profile</a></li>
-            <li><a class="dropdown-item dropimg_user" href="#">Purchase history</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item logout" href="/login/logOut">Sign out <i class="fa-solid fa-right-from-bracket"></i></a></li>
+            <li><a class="dropdown-item dropimg_user" href="#"><i class="fa-regular fa-user"></i> Trang cá nhân</a></li>
+            {{#unless session.user.access}}
+            <li><a class="dropdown-item dropimg_user" href="#"><i class="fa-solid fa-truck"></i> Lịch sử mua hàng</a></li>
+            {{/unless}}
+            <li><hr class="dropdown-divider bg-dark" /></li>
+            <li><a class="dropdown-item logout" href="/login/logOut"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất </a></li>
           </ul>
           {{else}}
-      <div class="text-middle" style="margin-right: 10px;">
-
+      <div class="text-middle" style="margin-right: 10px; ">
         <a href="/login">
           <button
             title="Đăng nhập"
             type="button"
             class="btn btn-warning btnCalo"
+            style="font-weight:450"
           >Login</button>
         </a>
       </div>
@@ -131,7 +133,6 @@
             class="fa-solid fa-magnifying-glass"
           ></i></button>
       </form>
-
     </div>
   </div>
 </nav>
