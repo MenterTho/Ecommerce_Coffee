@@ -466,3 +466,35 @@ section {
     font-size: 2.5em; }
   .about p {
     font-size: 0.9em; } }
+
+.thongbao {
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #36f45f;
+  color: #030303;
+  transition: 0.4s;
+  border-radius: 20px;
+  z-index: 100;
+  animation: thongbao 5s ease-in-out forwards; }
+
+.nutdong {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.5s; }
+
+.nutdong:hover {
+  color: black; }
+
+@keyframes thongbao {
+  from {
+    top: -100%; }
+  to {
+    top: 10%; } }

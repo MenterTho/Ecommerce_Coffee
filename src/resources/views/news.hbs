@@ -24,11 +24,22 @@
       class="rounded-circle"
     />
   </a>
-  <ul class="dropdown-menu text-small shadow">
-    <li><a class="dropdown-item" href="#">New project...</a></li>
-    <li><a class="dropdown-item" href="#">Settings</a></li>
-    <li><a class="dropdown-item" href="#">Profile</a></li>
-    <li><hr class="dropdown-divider" /></li>
-    <li><a class="dropdown-item" href="#">Sign out</a></li>
-  </ul>
+  <div
+    class="toast align-items-center text-bg-primary border-0"
+    role="alert"
+    aria-live="assertive"
+    aria-atomic="true"
+  >
+    <div class="d-flex">
+      <div class="toast-body">
+        Hello, world! This is a toast message.
+      </div>
+      <button
+        type="button"
+        class="btn-close btn-close-white me-2 m-auto"
+        data-bs-dismiss="toast"
+        aria-label="Close"
+      ></button>
+    </div>
+  </div>
 </div>

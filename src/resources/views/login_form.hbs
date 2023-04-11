@@ -25,7 +25,7 @@
                 class="input-field"
                 autocomplete="off"
                 required
-                value=""
+                value="{{username}}"  
                 {{#if user_err}} title="username không đúng" {{/if}}
                 name="username"
                 id="username"
@@ -39,12 +39,12 @@
                 class="input-field"
                 autocomplete="off"
                 required
-                value=""
+               value="{{password}}" 
                 {{#if pass_err}} title="password không đúng" {{/if}}
                 name="password"
                 id="password"
               />
-            <label for="password"> {{#if pass_err}}  <span class="err">{{pass_err}}</span> {{else}} Password {{/if}} </label> 
+            <label for="password"> {{#if pass_err}}  <span class="err">{{pass_err}}</span> {{else}} Password {{/if}} </label>
             </div>
             <input type="submit" value="Sign In" class="sign-btn" />
 
