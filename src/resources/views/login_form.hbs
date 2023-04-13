@@ -50,7 +50,7 @@
 
             <p class="text">
               Forgotten your password or you login datails?
-              <a href="#">Get help</a>
+              <a href="/login/resetPass_form">Get help</a>
               signing in
             </p>
           </div>
@@ -87,3 +87,27 @@
     </div>
   </div>
 </main>
+{{#if signUpMessage}}
+  <div class="thongbao">
+    <span
+      class="nutdong"
+      onclick="this.parentElement.style.display='none';"
+    >&times;</span>
+    <strong style="color: white"><i
+        class="fa-solid fa-circle-check fa-xl"
+      ></i></strong>
+    {{signUpMessage}}
+  </div>
+{{/if}}
+{{#if resetPassMessage}}
+  <div class="thongbao">
+    <span
+      class="nutdong"
+      onclick="this.parentElement.style.display='none';"
+    >&times;</span>
+    <strong style="color: white"><i
+        class="fa-solid fa-circle-check fa-xl"
+      ></i></strong>
+    {{resetPassMessage}}
+  </div>
+{{/if}}

@@ -1,51 +1,64 @@
-const Coffee = require("../models/Coffee");
-const { mutipleMogooseToObject } = require("../../util/mongoose");
-const url = require("url");
+const Coffee = require('../models/Coffee');
+const { mutipleMogooseToObject } = require('../../util/mongoose');
+const url = require('url');
 class SiteController {
-  //  Đây là đường truyền cho trang web home, bên file kia muốn đổi tên nào cũng được
-  // Nhưng đây thì không được vì nó là tên đường dẫn đến file home.hbs
-  // [GET] /Home
-  async home(req, res, next) {
-    const title = "Home";
-    // Biến lấy dữ liệu user
-    res.locals.session = req.session;
+    //  Đây là đường truyền cho trang web home, bên file kia muốn đổi tên nào cũng được
+    // Nhưng đây thì không được vì nó là tên đường dẫn đến file home.hbs
+    // [GET] /Home
+    async home(req, res, next) {
+        const title = 'Home';
+        // Biến lấy dữ liệu session tất cả
+        res.locals.session = req.session;
+        // Kiểm tra thông báo đăng nhập
+        if (req.session.login) {
+            // Gán biến login
+            req.session.login = false;
+            // Gán biến thông báo
+            res.locals.loginMessage = 'Đăng nhập thành công!';
+        }
+        // kiểm tra thông báo đăng xuất
+        if (req.session.logout) {
+            // Gán biến logout = false để không hiển thị thông báo lần nữa
+            req.session.logout = false;
+            // Gán biến thông báo để hiển thị trên view
+            res.locals.logoutMessage = 'Đăng xuất thành công!';
+        }
+        Coffee.find({})
+            .then((menu) => {
+                res.render('home', {
+                    title,
+                    menu: mutipleMogooseToObject(menu),
+                });
+            })
+            .catch(next);
+    }
+    // [GET] /search
+    search(req, res) {
+        res.locals.session = req.session;
+        const title = 'Search';
+        const parsedUrl = url.parse(req.url, true);
+        const searchTerm = parsedUrl.query.q;
+        const gioitinh = parsedUrl.query.Gioitinh;
 
-    Coffee.find({})
-      .then((menu) => {
-        res.render("home", {
-          title,
-          menu: mutipleMogooseToObject(menu),
+        res.render('search', {
+            title,
+            searchTerm,
+            gioitinh,
         });
-      })
-      .catch(next);
-  }
-  // [GET] /search
-  search(req, res) {
-    res.locals.session = req.session;
-    const title = "Search";
-    const parsedUrl = url.parse(req.url, true);
-    const searchTerm = parsedUrl.query.q;
-    const gioitinh = parsedUrl.query.Gioitinh;
-
-    res.render("search", {
-      title,
-      searchTerm,
-      gioitinh,
-    });
-  }
-  // [GET] /product
-  product(req, res, next) {
-    res.locals.session = req.session;
-    const title = "Products";
-    Coffee.find({})
-      .then((menu) => {
-        res.render("products", {
-          title,
-          menu: mutipleMogooseToObject(menu),
-        });
-      })
-      .catch(next);
-  }
+    }
+    // [GET] /product
+    product(req, res, next) {
+        res.locals.session = req.session;
+        const title = 'Products';
+        Coffee.find({})
+            .then((menu) => {
+                res.render('products', {
+                    title,
+                    menu: mutipleMogooseToObject(menu),
+                });
+            })
+            .catch(next);
+    }
 }
 
 module.exports = new SiteController();

@@ -78,13 +78,27 @@
     </div>
   </div>
 </section>
-{{#if session.user}}
+{{#if loginMessage}}
   <div class="thongbao">
     <span
       class="nutdong"
       onclick="this.parentElement.style.display='none';"
     >&times;</span>
-    <strong>Success<i class="fa-solid fa-check"></i></strong>
-    Đăng nhập thành công
+    <strong style="color: white"><i
+        class="fa-solid fa-circle-check fa-xl"
+      ></i></strong>
+    {{loginMessage}}
+  </div>
+{{/if}}
+{{#if logoutMessage}}
+  <div style="background-color: #f66359;" class="thongbao">
+    <span
+      class="nutdong"
+      onclick="this.parentElement.style.display='none';"
+    >&times;</span>
+    <strong style="color: white;"><i
+        class="fa-sharp fa-solid fa-circle-exclamation fa-xl"
+      ></i></strong>
+    {{logoutMessage}}
   </div>
 {{/if}}

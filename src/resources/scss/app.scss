@@ -570,6 +570,7 @@ section {
     position: fixed;
     top: -100%;
     left: 50%;
+    font-weight: 450;
     transform: translate(-50%, -50%);
     padding: 20px;
     background-color: #36f45f;
@@ -577,7 +578,7 @@ section {
     transition: 0.4s;
     border-radius: 20px;
     z-index: 100;
-    animation: thongbao 5s ease-in-out forwards;
+    animation: thongbao 2s ease-in-out forwards;
 }
 
 .nutdong {

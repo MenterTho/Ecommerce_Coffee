@@ -108,12 +108,11 @@ form.sign-up-form {
   font-weight: 500;
   text-decoration: none;
   font-size: 0.75rem;
-  transition: 0.3s;
   transition: 0.4s; }
 
 .toggle:hover {
   color: #0f48e4;
-  font-size: 1rem;
+  text-decoration: underline;
   transition: 0.4s; }
 
 .input-wrap {
@@ -170,7 +169,6 @@ label {
 
 .sign-btn:hover {
   background-color: #ffd93a;
-  transform: scale(1.2);
   color: black;
   transition: 0.4s; }
 
@@ -337,3 +335,36 @@ main.sign-up-mode .carousel {
     font-size: 1.2rem; }
   form {
     padding: 1rem 2rem 1.5rem; } }
+
+.thongbao {
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  font-weight: 450;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #36f45f;
+  color: #030303;
+  transition: 0.4s;
+  border-radius: 20px;
+  z-index: 100;
+  animation: thongbao 1s ease-in-out forwards; }
+
+.nutdong {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.5s; }
+
+.nutdong:hover {
+  color: black; }
+
+@keyframes thongbao {
+  from {
+    top: -100%; }
+  to {
+    top: 10%; } }
