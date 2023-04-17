@@ -16,19 +16,25 @@ body::-webkit-scrollbar-thumb {
   background-image: linear-gradient(-45deg, #b8b8b8, #b8b8b8);
   border-radius: 50px; }
 
-html,
 body {
   background: white;
   width: 100%;
   height: 100%;
   overflow-x: hidden; }
 
-.navmenu {
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: 1.1em; }
+.navbar {
+  background-color: #2b3034;
+  color: red;
+  transition: all 500ms ease;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; }
+
+.navbar-onScroll {
+  padding: 8px;
+  box-shadow: #26394d 0px 20px 30px -10px; }
 
 .navmenu {
+  text-transform: uppercase;
+  font-size: 1.1em;
   color: white;
   margin-right: 10px;
   transition: 0.4s;
@@ -36,7 +42,7 @@ body {
 
 .navmenu:hover {
   border-bottom: 1px solid #ffffff;
-  color: #8d8d8d;
+  color: #fff;
   transition: 0.4s; }
 
 .active-tab {
@@ -478,7 +484,7 @@ section {
   color: #030303;
   transition: 0.4s;
   border-radius: 20px;
-  z-index: 100;
+  z-index: 10000;
   animation: thongbao 2s ease-in-out forwards; }
 
 .nutdong {

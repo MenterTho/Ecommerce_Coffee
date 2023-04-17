@@ -1,195 +1,204 @@
 // @import "variables";
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
 // // chỉ cần ctrl + s là auto save qua bên css ố kề
 // [HEADER] Phần CSS cho header
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 body::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 body::-webkit-scrollbar-track {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 body::-webkit-scrollbar-thumb {
-    background-image: linear-gradient(-45deg, #b8b8b8, #b8b8b8);
-    border-radius: 50px;
+  background-image: linear-gradient(-45deg, #b8b8b8, #b8b8b8);
+  border-radius: 50px;
 }
 
-html,
 body {
-    background: white;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
+  background: white;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }
-.navmenu {
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 1.1em;
+.navbar {
+  background-color: #2b3034;
+  color: red;
+  transition: all 500ms ease;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
+// [CSS] phần sticky cho menu
+.navbar-onScroll {
+  padding: 8px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
 .navmenu {
-    color: white;
-    margin-right: 10px;
-    transition: 0.4s;
-    font-weight: 500;
+  text-transform: uppercase;
+  font-size: 1.1em;
+  color: white;
+  margin-right: 10px;
+  transition: 0.4s;
+  font-weight: 500;
 }
 .navmenu:hover {
-    border-bottom: 1px solid #ffffff;
-    color: #8d8d8d;
-    transition: 0.4s;
+  border-bottom: 1px solid #ffffff;
+  color: #fff;
+  transition: 0.4s;
 }
 .active-tab {
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: 8px;
-    padding: 8px;
-    background-color: white;
-    color: black;
-    font-weight: 500;
-    transition: 0.4s;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: white;
+  color: black;
+  font-weight: 500;
+  transition: 0.4s;
 }
 .active-tab:hover {
-    color: #000000;
-    transform: scale(1.2);
-    transition: 0.4s;
+  color: #000000;
+  transform: scale(1.2);
+  transition: 0.4s;
 }
 .drop-menu-more li a {
-    font-size: 20px;
-    color: rgb(0, 0, 0);
-    transition: 0.2s;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  transition: 0.2s;
 }
 .drop-menu-more li a:hover {
-    background-color: #fdd629;
+  background-color: #fdd629;
 }
 /* [Nút tìm kiếm] Phần css Tìm kiếm */
 .searchBtn {
-    align-items: center;
-    background-clip: padding-box;
-    background-color: #ffffff;
-    border: 1px solid transparent;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-    box-sizing: border-box;
-    color: #000000;
-    cursor: pointer;
-    display: inline-flex;
-    font-family: system-ui, -apple-system, system-ui, 'Helvetica Neue',
-        Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    justify-content: center;
-    line-height: 1.25;
-    margin: 0;
-    min-height: 3rem;
-    padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
-    position: relative;
-    text-decoration: none;
-    transition: all 250ms;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: baseline;
-    width: auto;
-    transition: 0.4s;
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+  transition: 0.4s;
 }
 
 .searchBtn:hover,
 .searchBtn:focus {
-    background-color: #fdd629;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  background-color: #fdd629;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
 .searchBtn:hover {
-    transform: translateY(-2px);
-    transition: 0.4s;
+  transform: translateY(-2px);
+  transition: 0.4s;
 }
 
 .searchBtn:active {
-    background-color: #c85000;
-    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
-    transform: translateY(0);
+  background-color: #c85000;
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  transform: translateY(0);
 }
 .btnCalo {
-    transition: 0.4s;
-    border: none;
+  transition: 0.4s;
+  border: none;
 }
 .btnCalo:hover {
-    transition: 0.4s;
-    transform: scale(1.2);
+  transition: 0.4s;
+  transform: scale(1.2);
 }
+
 // [FOOTER] Phần Css Footer
 footer {
-    background-color: #2b3034;
+  background-color: #2b3034;
 }
 .abc {
-    text-decoration: none;
-    color: white;
-    border-radius: 5px;
-    transition: 0.4s;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  transition: 0.4s;
 }
 .abc:hover {
-    background-color: white;
-    font-weight: 500;
-    color: black;
-    padding: 5px;
-    border-radius: 5px;
-    transition: 0.4s;
+  background-color: white;
+  font-weight: 500;
+  color: black;
+  padding: 5px;
+  border-radius: 5px;
+  transition: 0.4s;
 }
 // [Đường gạch] cho footer
 .bottomLi {
-    border-bottom: 1px solid white;
+  border-bottom: 1px solid white;
 }
 // [Icon] footer css
 .iconBtn {
-    text-decoration: none;
-    font-size: large;
-    color: white;
-    border-radius: 5px;
-    transition: 0.4s;
+  text-decoration: none;
+  font-size: large;
+  color: white;
+  border-radius: 5px;
+  transition: 0.4s;
 }
 .iconBtn:hover {
-    background-color: white;
-    font-weight: 500;
-    color: black;
-    padding: 4px;
-    border-radius: 10px;
-    transition: 0.4s;
+  background-color: white;
+  font-weight: 500;
+  color: black;
+  padding: 4px;
+  border-radius: 10px;
+  transition: 0.4s;
 }
 .facebook:hover {
-    color: #3b5998;
+  color: #3b5998;
 }
 .instagram:hover {
-    background: linear-gradient(
-        45deg,
-        #405de6,
-        #5851db,
-        #833ab4,
-        #c13584,
-        #e1306c,
-        #fd1d1d
-    );
-    color: rgb(255, 255, 255);
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d
+  );
+  color: rgb(255, 255, 255);
 }
 .twitter:hover {
-    color: #00acee;
+  color: #00acee;
 }
 .logout,
 .dropimg_user {
-    color: #000000;
-    background-color: white;
+  color: #000000;
+  background-color: white;
 }
 .dropimg_user:hover {
-    color: #000000;
-    background-color: #fdd629;
+  color: #000000;
+  background-color: #fdd629;
 }
 .logout:hover {
-    background-color: white;
-    font-weight: 500;
-    color: red;
+  background-color: white;
+  font-weight: 500;
+  color: red;
 }
 
 // [HOME] Phần css cho slides
@@ -197,410 +206,411 @@ footer {
 
 /*======= CSS variables =======*/
 :root {
-    --white-color: #fff;
-    --dark-color: #222;
-    --body-bg-color: #fff;
-    --section-bg-color: #202834;
-    --navigation-item-hover-color: #3b5378;
-    --text-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-    --box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
+  --white-color: #fff;
+  --dark-color: #222;
+  --body-bg-color: #fff;
+  --section-bg-color: #202834;
+  --navigation-item-hover-color: #3b5378;
+  --text-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  --box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
 }
 
 /*======= Main CSS =======*/
 
 section {
-    position: relative;
+  position: relative;
 }
 
 .section {
-    color: var(--white-color);
-    background: var(--section-bg-color);
-    padding: 35px 200px;
-    transition: 0.3s ease;
+  color: var(--white-color);
+  background: var(--section-bg-color);
+  padding: 35px 200px;
+  transition: 0.3s ease;
 }
 
 /*======= Home =======*/
 .home {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 .home:before {
-    z-index: 888;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 50px;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(transparent, var(--section-bg-color));
+  z-index: 888;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(transparent, var(--section-bg-color));
 }
 
 /*======= Background slider =======*/
 .bg-slider {
-    z-index: 777;
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
+  z-index: 777;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .bg-slider .swiper-slide {
-    position: relative;
-    width: 100%;
-    height: 100vh;
+  position: relative;
+  width: 100%;
+  height: 100vh;
 }
 
 .bg-slider .swiper-slide img {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    background-position: center;
-    background-size: cover;
-    pointer-events: none;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  background-position: center;
+  background-size: cover;
+  pointer-events: none;
 }
 
 .swiper-slide .text-content {
-    position: absolute;
-    top: 25%;
-    color: var(--white-color);
-    margin: 0 80px;
-    transition: 0.3s ease;
+  position: absolute;
+  top: 25%;
+  color: var(--white-color);
+  margin: 0 80px;
+  transition: 0.3s ease;
 }
 
 .swiper-slide .text-content .title {
-    font-size: 4em;
-    font-weight: 700;
-    text-shadow: var(--text-shadow);
-    margin-bottom: 20px;
-    transform: translateY(-50px);
-    opacity: 0;
+  font-size: 4em;
+  font-weight: 700;
+  text-shadow: var(--text-shadow);
+  margin-bottom: 20px;
+  transform: translateY(-50px);
+  opacity: 0;
 }
 
 .swiper-slide-active .text-content .title {
-    transform: translateY(0);
-    opacity: 1;
-    transition: 1s ease;
-    transition-delay: 0.3s;
-    transition-property: transform, opacity;
+  transform: translateY(0);
+  opacity: 1;
+  transition: 1s ease;
+  transition-delay: 0.3s;
+  transition-property: transform, opacity;
 }
 
 .swiper-slide .text-content .title span {
-    font-size: 0.3em;
-    font-weight: 500;
-    background-color: #fdd629;
-    color: black;
-    border-radius: 10px;
-    padding: 5px;
+  font-size: 0.3em;
+  font-weight: 500;
+  background-color: #fdd629;
+  color: black;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 .swiper-slide .text-content p {
-    max-width: 700px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    text-shadow: var(--text-shadow);
-    padding: 20px;
-    border-radius: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: var(--box-shadow);
-    transform: translateX(-80px);
-    opacity: 0;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  text-shadow: var(--text-shadow);
+  padding: 20px;
+  border-radius: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--box-shadow);
+  transform: translateX(-80px);
+  opacity: 0;
 }
 
 .swiper-slide-active .text-content p {
-    transform: translateX(0);
-    opacity: 1;
-    transition: 1s ease;
-    transition-delay: 0.3s;
-    transition-property: transform, opacity;
+  transform: translateX(0);
+  opacity: 1;
+  transition: 1s ease;
+  transition-delay: 0.3s;
+  transition-property: transform, opacity;
 }
 
 .swiper-slide .text-content .read-btn {
-    border: none;
-    outline: none;
-    background: var(--white-color);
-    color: var(--dark-color);
-    font-size: 1em;
-    font-weight: 500;
-    padding: 8px 25px;
-    display: flex;
-    align-items: center;
-    margin-top: 40px;
-    border-radius: 10px;
-    cursor: pointer;
-    transform: translateX(50px);
-    opacity: 0;
+  border: none;
+  outline: none;
+  background: var(--white-color);
+  color: var(--dark-color);
+  font-size: 1em;
+  font-weight: 500;
+  padding: 8px 25px;
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  transform: translateX(50px);
+  opacity: 0;
 }
 
 .swiper-slide-active .text-content .read-btn {
-    transform: translateX(0);
-    opacity: 1;
-    transition: 1s ease;
-    transition-delay: 0.3s;
-    transition-property: transform, opacity;
+  transform: translateX(0);
+  opacity: 1;
+  transition: 1s ease;
+  transition-delay: 0.3s;
+  transition-property: transform, opacity;
 }
 
 .swiper-slide .text-content .read-btn i {
-    font-size: 1.6em;
-    transition: 0.3s ease;
+  font-size: 1.6em;
+  transition: 0.3s ease;
 }
 
 .swiper-slide .text-content .read-btn:hover i {
-    transform: translateX(5px);
+  transform: translateX(5px);
 }
 
 .dark-layer:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.1);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .bg-slider-thumbs {
-    z-index: 777;
-    position: absolute;
-    bottom: 7em;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: 0.3s ease;
+  z-index: 777;
+  position: absolute;
+  bottom: 7em;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s ease;
 }
 
 .thumbs-container {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 10px 3px;
-    border-radius: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: var(--box-shadow);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 10px 3px;
+  border-radius: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--box-shadow);
 }
 
 .thumbs-container img {
-    width: 50px;
-    height: 35px;
-    margin: 0 5px;
-    border-radius: 5px;
-    cursor: pointer;
+  width: 50px;
+  height: 35px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .swiper-slide-thumb-active {
-    border: 1px solid var(--white-color);
+  border: 1px solid var(--white-color);
 }
 
 /*======= Media icons =======*/
 .media-icons {
-    z-index: 999;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    top: 50%;
-    transform: translateY(-50%);
-    margin-left: 90px;
+  z-index: 999;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 90px;
 }
 
 .media-icons a {
-    color: var(--white-color);
-    font-size: 1.7em;
-    margin: 10px 0;
+  color: var(--white-color);
+  font-size: 1.7em;
+  margin: 10px 0;
 }
 
 /*======= About section =======*/
 .about h2 {
-    font-size: 3em;
-    font-weight: 600;
+  font-size: 3em;
+  font-weight: 600;
 }
 
 .about p {
-    margin: 25px 0;
+  margin: 25px 0;
 }
 
 /*======= Media queries (max-width: 1100px) =======*/
 @media screen and (max-width: 1100px) {
-    header .nav-bar {
-        padding: 0 50px;
-    }
+  header .nav-bar {
+    padding: 0 50px;
+  }
 
-    .section {
-        padding: 25px 50px;
-    }
+  .section {
+    padding: 25px 50px;
+  }
 
-    .media-icons {
-        right: 0;
-        margin-right: 50px;
-    }
+  .media-icons {
+    right: 0;
+    margin-right: 50px;
+  }
 
-    .swiper-slide .text-content {
-        margin: 0 120px 0 50px;
-    }
+  .swiper-slide .text-content {
+    margin: 0 120px 0 50px;
+  }
 
-    .bg-slider-thumbs {
-        bottom: 3em;
-    }
+  .bg-slider-thumbs {
+    bottom: 3em;
+  }
 }
 
 /*======= Media queries (max-width: 785px) =======*/
 @media screen and (max-width: 785px) {
-    header .nav-bar {
-        padding: 25px 20px;
-    }
+  header .nav-bar {
+    padding: 25px 20px;
+  }
 
-    .section {
-        padding: 25px 20px;
-    }
+  .section {
+    padding: 25px 20px;
+  }
 
-    .media-icons {
-        margin-right: 20px;
-    }
+  .media-icons {
+    margin-right: 20px;
+  }
 
-    .media-icons a {
-        font-size: 1.5em;
-    }
+  .media-icons a {
+    font-size: 1.5em;
+  }
 
-    .swiper-slide .text-content {
-        margin: 0 70px 0 20px;
-    }
+  .swiper-slide .text-content {
+    margin: 0 70px 0 20px;
+  }
 
-    .swiper-slide .text-content .title {
-        font-size: 3em;
-    }
+  .swiper-slide .text-content .title {
+    font-size: 3em;
+  }
 
-    .swiper-slide .text-content .title span {
-        font-size: 0.35em;
-    }
+  .swiper-slide .text-content .title span {
+    font-size: 0.35em;
+  }
 
-    .swiper-slide .text-content p {
-        font-size: 0.9em;
-    }
+  .swiper-slide .text-content p {
+    font-size: 0.9em;
+  }
 
-    /*======= Navigation menu =======*/
-    .nav-menu-btn {
-        display: block;
-        color: var(--white-color);
-        font-size: 1.5em;
-        cursor: pointer;
-    }
+  /*======= Navigation menu =======*/
+  .nav-menu-btn {
+    display: block;
+    color: var(--white-color);
+    font-size: 1.5em;
+    cursor: pointer;
+  }
 
-    .nav-close-btn {
-        display: block;
-        color: var(--dark-color);
-        position: absolute;
-        top: 0;
-        right: 0;
-        font-size: 1.3em;
-        margin: 10px;
-        cursor: pointer;
-        transition: 0.3s ease;
-    }
+  .nav-close-btn {
+    display: block;
+    color: var(--dark-color);
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.3em;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
 
-    .navigation {
-        z-index: 99999;
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        background: rgba(0, 0, 0, 0.25);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        visibility: hidden;
-        opacity: 0;
-        transition: 0.3s ease;
-    }
+  .navigation {
+    z-index: 99999;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease;
+  }
 
-    .navigation.active {
-        visibility: visible;
-        opacity: 1;
-    }
+  .navigation.active {
+    visibility: visible;
+    opacity: 1;
+  }
 
-    .navigation .nav-items {
-        position: relative;
-        background: var(--white-color);
-        width: 400px;
-        max-width: 400px;
-        display: grid;
-        place-content: center;
-        margin: 20px;
-        padding: 40px;
-        border-radius: 20px;
-        box-shadow: var(--box-shadow);
-        transform: translateY(-200px);
-        transition: 0.3s ease;
-    }
+  .navigation .nav-items {
+    position: relative;
+    background: var(--white-color);
+    width: 400px;
+    max-width: 400px;
+    display: grid;
+    place-content: center;
+    margin: 20px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+    transform: translateY(-200px);
+    transition: 0.3s ease;
+  }
 
-    .navigation.active .nav-items {
-        transform: translateY(0);
-    }
+  .navigation.active .nav-items {
+    transform: translateY(0);
+  }
 
-    .navigation .nav-items a {
-        color: var(--dark-color);
-        font-size: 1em;
-        margin: 15px 50px;
-        transition: 0.3s ease;
-    }
+  .navigation .nav-items a {
+    color: var(--dark-color);
+    font-size: 1em;
+    margin: 15px 50px;
+    transition: 0.3s ease;
+  }
 
-    .navigation .nav-items a:hover {
-        color: var(--navigation-item-hover-color);
-    }
+  .navigation .nav-items a:hover {
+    color: var(--navigation-item-hover-color);
+  }
 
-    .navigation .nav-items > a > i {
-        display: inline-block;
-        font-size: 1.3em;
-        margin-right: 5px;
-    }
+  .navigation .nav-items > a > i {
+    display: inline-block;
+    font-size: 1.3em;
+    margin-right: 5px;
+  }
 
-    .swiper-slide .text-content .read-btn {
-        font-size: 0.9em;
-        padding: 5px 15px;
-    }
+  .swiper-slide .text-content .read-btn {
+    font-size: 0.9em;
+    padding: 5px 15px;
+  }
 
-    /*======= About section =======*/
-    .about h2 {
-        font-size: 2.5em;
-    }
+  /*======= About section =======*/
+  .about h2 {
+    font-size: 2.5em;
+  }
 
-    .about p {
-        font-size: 0.9em;
-    }
+  .about p {
+    font-size: 0.9em;
+  }
 }
 
+// [THÔNG BÁO] CSS phần thông báo cho tất cả hoạt động
 .thongbao {
-    position: fixed;
-    top: -100%;
-    left: 50%;
-    font-weight: 450;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    background-color: #36f45f;
-    color: rgb(3, 3, 3);
-    transition: 0.4s;
-    border-radius: 20px;
-    z-index: 100;
-    animation: thongbao 2s ease-in-out forwards;
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  font-weight: 450;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #36f45f;
+  color: rgb(3, 3, 3);
+  transition: 0.4s;
+  border-radius: 20px;
+  z-index: 10000;
+  animation: thongbao 2s ease-in-out forwards;
 }
 
 .nutdong {
-    margin-left: 15px;
-    color: white;
-    font-weight: bold;
-    float: right;
-    font-size: 22px;
-    line-height: 20px;
-    cursor: pointer;
-    transition: 0.5s;
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
 .nutdong:hover {
-    color: black;
+  color: black;
 }
 
 @keyframes thongbao {
-    from {
-        top: -100%;
-    }
-    to {
-        top: 10%;
-    }
+  from {
+    top: -100%;
+  }
+  to {
+    top: 10%;
+  }
 }

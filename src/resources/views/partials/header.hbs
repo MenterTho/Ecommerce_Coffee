@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
   <div class="container-fluid">
     <a title="Meow meow" class="navbar-brand" href="/"><img
         src="https://cdn-icons-png.flaticon.com/512/2173/2173478.png"
@@ -37,7 +37,7 @@
           >Sản phẩm</a>
         </li>
         <li class="nav-item">
-          <a title="Đặt bàn" class="nav-link navmenu a" href="#">Đặt bàn</a>
+          <a title="Đặt bàn" class="nav-link navmenu a" href="#">Cửa hàng</a>
         </li>
         <li class="nav-item dropdown">
           <a
@@ -55,8 +55,6 @@
             class="dropdown-menu drop-menu-more"
             aria-labelledby="navbarDropdown"
           >
-            <li><a title="Cửa hàng" class="dropdown-item" href="#">Cửa hàng
-              </a></li>
             <li><a
                 title="Câu truyện thương hiệu"
                 class="dropdown-item"
@@ -86,9 +84,10 @@
       <div class="dropdown text-end">
         <a
           href="#"
-          class="d-block link-dark text-decoration-none dropdown-toggle"
+          class="d-block link-dark text-decoration-none"
           data-bs-toggle="dropdown"
           aria-expanded="false"
+          style="margin-right: 10px;"
         >
           <img 
             src="{{session.user.image}}"
@@ -99,7 +98,7 @@
           />
         </a>
           <ul class="dropdown-menu text-small">
-            <li><a class="dropdown-item dropimg_user" href="#"><i class="fa-regular fa-user"></i> Trang cá nhân</a></li>
+            <li><a class="dropdown-item dropimg_user" title="Trang cá nhân" href="/profile"><i class="fa-regular fa-user"></i> Trang cá nhân</a></li>
             {{#unless session.user.access}}
             <li><a class="dropdown-item dropimg_user" href="#"><i class="fa-solid fa-truck"></i> Lịch sử mua hàng</a></li>
             {{/unless}}

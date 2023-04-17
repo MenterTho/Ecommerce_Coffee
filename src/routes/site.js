@@ -5,10 +5,11 @@ const express = require("express");
 const router = express.Router();
 const siteControllers = require("../app/controllers/SiteController");
 
-router.get("/products", siteControllers.product);
-router.get("/search", siteControllers.search);
 // ký tự ("/") muốn đặt tên gì thì đặt này là đường truyền của siteControllers.home
 // (qua file SiteControllers, js để biết)
+router.get("/profile", siteControllers.profile);
+router.get("/products", siteControllers.product);
+router.get("/search", siteControllers.search);
 router.get("/", siteControllers.home);
 
 module.exports = router;

@@ -111,3 +111,15 @@
     {{resetPassMessage}}
   </div>
 {{/if}}
+{{#if nologinMessage}}
+  <div class="thongbao">
+    <span
+      class="nutdong"
+      onclick="this.parentElement.style.display='none';"
+    >&times;</span>
+    <strong style="color: white"><i
+        class="fa-solid fa-circle-check fa-xl"
+      ></i></strong>
+    {{nologinMessage}}
+  </div>
+{{/if}}
