@@ -1,0 +1,95 @@
+<div class="mt-4" >
+  <section class="vh-100 mb-4" >
+    <div class="container h-100" >
+      <div class="row d-flex justify-content-center align-items-center h-50 ">
+        <div class="col-xl-9"></div>
+        <form method="POST" action="/admin/{{product._id}}/editProducts?_method=PUT">
+          <div class="card bg-dark text-white"  style="border-radius: 15px;">
+            <div class="card-body" >
+              <div class="row align-items-center pt-4 pb-3 ">
+                <div class="col-md-3 ps-5">
+                 <label for="name"> <h5 class="mb-0">Name Product</h5></label>
+                </div>
+                <div class="col-md-9 pe-5">
+                  <input
+                    type="text"
+                    required
+                    name="name"
+                    value="{{product.name}}"
+                    class="form-control form-control-lg"
+                  />
+                </div>
+              </div>
+              <hr class="mx-n3" />
+              <div class="row align-items-center pt-4 pb-3">
+                <div class="col-md-3 ps-5">
+                  <label for="price"><h5 class="mb-0">Price & Size</h5></label> 
+                </div>
+                <div class="col-md-9 pe-5">
+                    <select name="price" id="price" style="cursor:pointer;" class="select form-control-lg">
+                    <option value="1"disabled>{{product.price}}</option>
+                    <option value="15.000đ - 20.000đ">15.000đ - 20.000đ</option>
+                    <option value="20.000đ - 25.000đ">20.000đ - 25.000đ</option>
+                    <option value="27.000đ - 35.000đ">27.000đ - 35.000đ</option>
+                    <option value="30.000đ - 40.000đ">30.000đ - 40.000đ</option>
+                    <option value="35.000đ - 42.000đ">35.000đ - 42.000đ</option>
+                    <option value="40.000đ - 45.000đ">40.000đ - 45.000đ</option>
+                    <option value="45.000đ - 52.000đ">45.000đ - 52.000đ</option>
+                    <option value="50.000đ - 60.000đ">50.000đ - 60.000đ</option>
+                    <option value="60.000đ - 65.000đ">60.000đ - 65.000đ</option>
+                    <option value="80.000đ - 88.000đ">80.000đ - 88.000đ</option>
+                    <option value="85.000đ - 92.000đ">85.000đ - 92.000đ</option>
+                    <option value="90.000đ - 96.000đ">90.000đ - 96.000đ</option>
+                  </select> 
+                    <select name="size" id="size" style="cursor:pointer;" class="select form-control-lg mt-2">
+                    <option value="1"disabled>{{product.size}}</option>
+                    <option value="Small, Medium">Small, Medium</option>
+                    <option value="Small, Large">Small, Large</option>
+                    <option value="Medium, Large">Medium, Large</option>
+                    <option value="Small, Medium, Large">Small, Medium, Large</option>
+                  </select> 
+                </div>
+              </div>
+              <hr class="mx-n3" />
+              <div class="row align-items-center pt-4 pb-3">
+                <div class="col-md-3 ps-5">
+                 <label for="image"> <h5 class="mb-0">Link Image</h5></label>
+                </div>
+                <div class="col-md-9 pe-5">
+                  <input
+                    type="text"
+                    required
+                    name="image"
+                    value="{{product.image}}"
+                    class="form-control form-control-lg"
+                  />
+                </div>
+              </div>
+              <hr class="mx-n3" />
+              <div class="row align-items-center py-3">
+                <div class="col-md-3 ps-5">
+                <label for="description"><h5 class="mb-0">Description</h5></label>  
+                </div>
+                <div class="col-md-9 pe-5">
+                  <textarea
+                    class="form-control"
+                    rows="3"
+                    required
+                    name="description"
+                    placeholder="Mô tả sản phẩm"
+                  ></textarea>
+                </div>
+              </div>
+              <hr class="mx-n3" />
+              <div class="px-5 py-4">
+                <button type="submit" class="btn btn-danger btn-lg">Edit Product</button>
+                <a href="/admin"><button type="button" class="btn btn-secondary btn-lg"><i class="fa-solid fa-backward"></i> Go back</button></a> 
+              </div>
+            </div>
+          </div>
+        </div>
+    </form>
+      </div>
+    </div>
+  </section>
+</div>

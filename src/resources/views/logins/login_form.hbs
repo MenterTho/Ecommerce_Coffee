@@ -1,0 +1,144 @@
+<main>
+  <div class="box">
+    <div class="inner-box">
+      <div class="forms-wrap">
+        <form method="POST" action="/login/postLogin" autocomplete="off" class="sign-in-form">
+            <a style="text-decoration: none;" href="/">
+          <div class="logo">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2173/2173478.png"
+              alt="easyclass"
+            />
+            <h4>Coffee Cat</h4>
+          </div>
+            </a>
+          <div class="heading">
+            <h2>Welcome Back</h2>
+            <h6>Not registred yet?</h6>
+            <a href="/login/signUp" class="toggle">Sign up</a>
+          </div>
+          <div class="actual-form">
+            <div class="input-wrap">
+              <input
+                type="text"
+                minlength="1"
+                class="input-field"
+                autocomplete="off"
+                required
+                value="{{username}}"  
+                {{#if user_err}} title="username không đúng" {{/if}}
+                name="username"
+                id="username"
+              /> 
+             <label for="username"> {{#if user_err}} <span class="err">{{user_err}}</span> {{else}} Name {{/if}} </label>
+            </div>
+            <div class="input-wrap">
+              <input
+                type="password"
+                minlength="1"
+                class="input-field"
+                autocomplete="off"
+                required
+               value="{{password}}" 
+                {{#if pass_err}} title="password không đúng" {{/if}}
+                name="password"
+                id="password"
+              />
+            <label for="password"> {{#if pass_err}}  <span class="err">{{pass_err}}</span> {{else}} Password {{/if}} </label>
+            </div>
+         
+          <div class="form-check">
+         <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault">
+               <p class="text">Xem mật khẩu</p>
+          </div>
+           
+            <input type="submit" value="Sign In" class="sign-btn" />
+            <p class="text">
+              Forgotten your password or you login datails?
+              <a href="/login/resetPass_form">Get help</a>
+              signing in
+            </p>
+          </div>
+        </form>  
+      </div>
+      <div class="carousel">
+        <div class="images-wrapper">
+          <img
+            src="https://img.freepik.com/premium-vector/illustration-cat-who-is-barista-funny-cute-cartoon-cat_56505-67.jpg?size=626&ext=jpg&ga=GA1.1.1887643554.1680234593&semt=ais"
+            class="image img-1 show"
+            alt=""
+          />
+          <img
+            src=""
+            class="image img-2"
+            alt=""
+          />
+        </div>
+        <div class="text-slider">
+          <div class="text-wrap">
+            <div class="text-group">
+              <h2></h2>
+              <h2></h2>
+              <h2></h2>
+            </div>
+          </div>
+          <div class="bullets">
+            <span class="active" data-value="1"></span>
+            <span data-value="2" ></span>
+            <span data-value="3"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{{#if signUpMess}}
+  <div class="thongbao">
+    <span
+      class="nutdong"
+      onclick="this.parentElement.style.display='none';"
+    >&times;</span>
+    <strong style="color: white"><i
+        class="fa-solid fa-circle-check fa-xl"
+      ></i></strong>
+    {{signUpMess}}
+  </div>
+{{/if}}
+{{!-- (2) --}}
+{{#if resetPassMess}}
+  <div class="thongbao">
+    <span
+      class="nutdong"
+      onclick="this.parentElement.style.display='none';"
+    >&times;</span>
+    <strong style="color: white"><i
+        class="fa-solid fa-circle-check fa-xl"
+      ></i></strong>
+    {{resetPassMess}}
+  </div>
+{{/if}}
+{{!-- (3) --}}
+{{#if noLoginMess}}
+  <div class="thongbao">
+    <span
+      class="nutdong"
+      onclick="this.parentElement.style.display='none';"
+    >&times;</span>
+    <strong style="color: white"><i
+        class="fa-solid fa-circle-check fa-xl"
+      ></i></strong>
+    {{noLoginMess}}
+  </div>
+{{/if}}
+{{!-- (4) --}}
+{{#if reloginMess}}
+  <div style="background-color: #fea92a;" class="thongbao">
+    <span
+      class="nutdong"
+      onclick="this.parentElement.style.display='none';"
+    >&times;</span>
+    <strong style="color: white;"><i class="fa-solid fa-circle-info fa-xl"></i></strong>
+    {{reloginMess}}
+  </div>
+{{/if}}

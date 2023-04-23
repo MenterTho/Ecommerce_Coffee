@@ -6,22 +6,21 @@ const port = 3000;
 const path = require("path");
 const route = require("./routes");
 const db = require("./config/db");
-const session = require("express-session");
 const methodOverride = require("method-override");
-const bcrypt = require("bcrypt");
 const moment = require("moment");
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
 
-// app use method
-app.use(methodOverride("_method"));
-
-// app use session
 app.use(
   session({
-    secret: "001", // Chuỗi bí mật để mã hóa session ID, có thể tự chọn
+    secret: "secret-key",
     resave: false,
     saveUninitialized: true,
   })
 );
+app.use(cookieParser());
+// app use method
+app.use(methodOverride("_method"));
 
 // Connect DB
 db.connect();
@@ -56,6 +55,12 @@ app.engine(
       formatDate: function (date) {
         return moment(date).format("DD/MM/YYYY");
       },
+      // Format ngày của mongoDB
+      formatDateHourMin: function (date) {
+        return moment(date).format("hh:mm A | DD/MM/YYYY");
+      },
+      // Cho thứ tự cột
+      sum: (a, b) => a + b,
     },
   })
 );

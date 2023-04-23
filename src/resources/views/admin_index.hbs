@@ -1,0 +1,499 @@
+<nav>
+  <div class="logo-name">
+    <div class="logo-image">
+      <!--<img src="images/logo.png" alt="">-->
+    </div>
+
+    <span class="logo_name">Coffee Cat</span>
+  </div>
+
+  <div class="menu-items">
+    <ul class="nav-links">
+      <li><a href="#">
+          <i class="fa-solid fa-chart-line"></i>
+          <span class="link-name">Dahsboard</span>
+        </a></li>
+      <li><a href="#product">
+          <i class="fa-brands fa-product-hunt"></i>
+          <span class="link-name">Products</span>
+        </a></li>
+      <li><a href="#user">
+         <i class="fa-solid fa-users"></i>
+          <span class="link-name">Users</span>
+        </a></li>
+          <li><a href="#lockUser">
+            <i class="fa-solid fa-lock"></i>
+          <span class="link-name">locked user</span>
+        </a></li>
+
+    </ul>
+
+    <ul class="logout-mode">
+      <li><a href="/">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span class="link-name">Go back </span>
+        </a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="dashboard">
+  <div class="top">
+  <i class="fa-solid fa-house"></i>
+    <div class="search-box">
+    <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="search-input" placeholder="Search here..." />
+    </div>
+  </div>
+
+  <div class="dash-content">
+    <div class="overview">
+      <div class="title">
+      <i class="fa-solid fa-chart-line"></i>
+        <span class="text">Dashboard</span>
+      </div>
+
+      <div class="boxes">
+        <div class="box box1">
+          <i class="uil uil-thumbs-up"></i>
+          <span class="text">Total users account</span>
+          <span class="number">100</span>
+        </div>
+        <div class="box box2">
+          <i class="uil uil-comments"></i>
+          <span class="text">Total products</span>
+          <span class="number">300</span>
+        </div>
+        <div class="box box3">
+          <i class="uil uil-share"></i>
+          <span class="text">Total products sold</span>
+          <span class="number">10,120</span>
+        </div>
+      </div>
+    </div>
+  {{!-- Table tài khoản --}}
+    <div id="user" class="activity">
+      <div class="title">
+        <i class="fa-solid fa-users"></i>
+        <span class="text">User account</span>
+      </div>
+
+      <table class="table table-striped">
+        <thead style=" border-top: 1px solid #050505;">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Joined</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each user}}
+            <tr>
+              <th scope="row">{{sum @index 1}}</th>
+              <td>{{this.username}}</td>
+              <td>{{this.email}}</td>
+              <td>{{formatDate this.createdAt}}</td>
+              <td>{{this.phone}}</td>
+              <td>
+                <a href="#" data-id="{{this._id}}" data-bs-toggle="modal" data-bs-target="#lookModal"> <button
+                  type="button"
+                  {{#if this.access}}
+                  style="display:none;"
+                  {{/if}}
+                  class="btn btn-danger"
+                >Lock</button></a>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+    {{!-- table sản phẩm --}}
+      <div id="product" class="title">
+         <i class="fa-brands fa-product-hunt"></i>
+        <span class="text">Products</span>
+       <a href="#" data-bs-toggle="modal" data-bs-target="#postModalProduct"><button style="margin-left: 10px;" type="button" class="btn btn-dark"><img style="width: 20px" src="img/plus.png" alt=""> Add products</button></a> 
+      </div>
+     <div class="activity"  style="height:500px; overflow-y:auto;">
+      <table class="table table-striped" >
+        <thead style=" border-top: 1px solid #050505;">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Size</th>
+            <th scope="col">CreatedAt</th>
+            <th scope="col">Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each coffee}}
+            <tr>
+              <th scope="row">{{sum @index 1}}</th>
+              <td ><img  class="imgProduct" style="width:200px; height: auto; border-radius:20px;" src="{{this.image}}" alt=""></td>
+              <td>{{this.name}}</td>
+              <td>{{this.price}}</td>
+              <td>{{this.size}}</td>
+              <td>{{formatDate this.createdAt}}</td>
+              <td>
+               <a href="admin/{{this._id}}/editFromProducts"><button type="button" class="btn btn-primary">Edit</button></a> 
+                <a href="#" data-id="{{this._id}}" data-bs-toggle="modal" data-bs-target="#deleteModalProduct"> <button
+                  type="button"
+                  class="btn btn-danger"
+                >Delete</button></a>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+    {{!-- table những thông tin đã xóa  --}}
+     <div id="lockUser" class="activity">
+      <div class="title">
+        <i class="fa-solid fa-lock"></i>
+        <span class="text">locked Accounts </span>
+      </div>
+      <table class="table table-striped">
+        <thead style=" border-top: 1px solid #050505;">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Lock At</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each userDelete}}
+            <tr>
+              <th scope="row">{{sum @index 1}}</th>
+              <td>{{this.username}}</td>
+              <td>{{this.email}}</td>
+              <td>{{formatDateHourMin this.deletedAt}}</td>
+              <td>{{this.phone}}</td>
+              <td>
+               <a href="#"><button data-id="{{this._id}}" type="button" class="btn btn-primary btnRestore">Restore</button></a> 
+                <a href="#" data-id="{{this._id}}" data-bs-toggle="modal" data-bs-target="#deleteUserModal"> <button
+                  type="button"
+                  {{#if this.access}}
+                  style="display:none;"
+                  {{/if}}
+                  class="btn btn-danger"
+                >Delete</button></a>
+              </td>
+            </tr>
+            {{else}}
+              <tr>
+                <td colspan="5" class="text-center">
+                  Danh sách khóa tài khoản trống
+                </td>
+              </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<!-- Modal look User -->
+<div class="modal fade" id="lookModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Lock user?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Bạn đã chắc muốn khóa người user này ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+        <button id="btnlookUser" type="submit" class="btn btn-danger">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal delete products -->
+<div class="modal fade" id="deleteUserModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete user?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Bạn chắc có muốn xóa user này vĩnh viễn không?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+        <button id="btndeleteUser" type="submit" class="btn btn-danger">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal delete products -->
+<div class="modal fade" id="deleteModalProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete product?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Bạn chắc có muốn xóa sản phẩm này không?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+        <button id="btnDeleteProduct" type="submit" class="btn btn-danger">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal edit products -->
+
+
+<!-- Modal post products -->
+<div class="modal fade" id="postModalProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add product?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form method="POST" action="/admin/addProduct" enctype="multipart/form-data">
+       <div class="modal-body">
+        <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0" style="font-weight: 700;">Name:</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0"><input class="inputEdit" type="text" required name="name" id="" value=""></p>
+              </div>
+          </div>
+           <hr />
+          <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0" style="font-weight: 700;">Price:</p>
+              </div>
+              <div class="col-sm-9">
+                 <select name="price" id="price" style="cursor:pointer;" class="select form-control">
+                    <option value="1"disabled>Choose price</option>
+                    <option value="15.000đ - 20.000đ">15.000đ - 20.000đ</option>
+                    <option value="20.000đ - 25.000đ">20.000đ - 25.000đ</option>
+                    <option value="27.000đ - 35.000đ">27.000đ - 35.000đ</option>
+                    <option value="30.000đ - 40.000đ">30.000đ - 40.000đ</option>
+                    <option value="35.000đ - 42.000đ">35.000đ - 42.000đ</option>
+                    <option value="40.000đ - 45.000đ">40.000đ - 45.000đ</option>
+                    <option value="45.000đ - 52.000đ">45.000đ - 52.000đ</option>
+                    <option value="50.000đ - 60.000đ">50.000đ - 60.000đ</option>
+                    <option value="60.000đ - 65.000đ">60.000đ - 65.000đ</option>
+                    <option value="80.000đ - 88.000đ">80.000đ - 88.000đ</option>
+                    <option value="85.000đ - 92.000đ">85.000đ - 92.000đ</option>
+                    <option value="90.000đ - 96.000đ">90.000đ - 96.000đ</option>
+                  </select> 
+              </div>
+          </div>
+           <hr />
+          <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0" style="font-weight: 700;">Size:</p>
+              </div>
+              <div class="col-sm-9">
+                  <select name="size" id="size" style="cursor:pointer;" class="select form-control mt-2">
+                    <option value="1"disabled>Choose size</option>
+                    <option value="Small, Medium">Small, Medium</option>
+                    <option value="Small, Large">Small, Large</option>
+                    <option value="Medium, Large">Medium, Large</option>
+                    <option value="Small, Medium, Large">Small, Medium, Large</option>
+                  </select> 
+              </div>
+          </div>
+           <hr />
+          <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0" style="font-weight: 700;">Description:</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0"><input class="inputEdit" type="text" required name="description" id="" value=""></p>
+              </div>
+          </div>
+            <hr />
+          <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0" style="font-weight: 700;">Image:</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0"><input class="inputEdit" type="file" required name="image" id="" value=""></p>
+              </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+        <button type="submit" class="btn btn-danger">Add Product</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{{!-- look user form --}}
+<form name="lookUserForm" method="POST"></form>
+{{!-- delete user form --}}
+<form name="deleteUserForm" method="POST"></form>
+{{!-- restore user form --}}
+<form name="restoreUserForm" method="POST"></form>
+{{!-- delete product form --}}
+<form name="deleteProductForm" method="POST"></form>
+
+
+{{!-- js cho những tương tác trên User --}}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var LookUserId;
+    var DeleteUserId;
+    var DeleteProductId;
+    //-------[From]-----------
+    var lookUserForm = document.forms['lookUserForm'];
+    var deleteUserForm = document.forms['deleteUserForm'];
+    var restoreUserForm = document.forms['restoreUserForm'];
+    var deleteProductForm = document.forms['deleteProductForm'];
+    //-------[Btn]-----------
+    var btnlookUser = document.getElementById('btnlookUser');
+    var btndeleteUser = document.getElementById('btndeleteUser');
+    var btnDeleteProduct = document.getElementById('btnDeleteProduct');
+    var restorebtn = $('.btnRestore')
+
+    //  lookUser
+    $('#lookModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) 
+      LookUserId = button.data('id') 
+    })
+    // deleteUser
+     $('#deleteUserModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) 
+      DeleteUserId = button.data('id') 
+    })
+    // deleteProduct
+     $('#deleteModalProduct').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) 
+      DeleteProductId = button.data('id') 
+    })
+    // Thực hiện look user
+    btnlookUser.onclick = function(){
+      lookUserForm.action =  'admin/' + LookUserId + '?_method=DELETE';
+      lookUserForm.submit();
+    }
+     // Thực hiện delete user
+    btndeleteUser.onclick = function(){
+      deleteUserForm.action =  'admin/' + DeleteUserId + '/deleteRealUser?_method=DELETE';
+      deleteUserForm.submit();
+    }
+
+    // Thực hiện delete product
+    btnDeleteProduct.onclick = function(){
+      deleteProductForm.action =  'admin/' + DeleteProductId + '/deleteProduct?_method=DELETE';
+      deleteProductForm.submit();
+    }
+    // Khôi phục user
+    restorebtn.click(function (e){
+      e.preventDefault();
+      var UserId = $(this).data('id');
+      restoreUserForm.action =  'admin/' + UserId + '/restoreUser?_method=PATCH';
+      restoreUserForm.submit();
+    });
+  })
+</script>
+<script>
+  // JavaScript code search
+const input = document.getElementById('search-input');
+const rows = document.querySelectorAll('tbody tr');
+
+input.addEventListener('input', () => {
+  const searchTerm = input.value.trim().toLowerCase();
+
+  rows.forEach(row => {
+    const name = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+    const price = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+    const size = row.querySelector('td:nth-child(5)').textContent.toLowerCase();
+
+    if (name.includes(searchTerm) || price.includes(searchTerm) || size.includes(searchTerm)) {
+      row.style.display = '';
+    } else {
+      row.style.display = 'none';
+    }
+  });
+});
+
+</script>
+{{!-- thông báo khóa user --}}
+{{#if lookUserMess}}
+  <div class="thongbao">
+    <span
+      class="nutdong"
+      onclick="this.parentElement.style.display='none';"
+    >&times;</span>
+    <strong style="color: white"><i
+        class="fa-solid fa-circle-check fa-xl"
+      ></i></strong>
+    {{lookUserMess}}
+  </div>
+{{/if}}
+{{!-- thông báo xóa user --}}
+{{#if deleteUserMess}}
+  <div style="background-color: #f66359;" class="thongbao">
+    <span
+      class="nutdong"
+      onclick="this.parentElement.style.display='none';"
+    >&times;</span>
+    <strong style="color: white"><i
+        class="fa-solid fa-circle-check fa-xl"
+      ></i></strong>
+    {{deleteUserMess}}
+  </div>
+{{/if}}
+{{!-- thông báo khôi phục user --}}
+{{#if restoreUseMess}}
+  <div class="thongbao">
+    <span
+      class="nutdong"
+      onclick="this.parentElement.style.display='none';"
+    >&times;</span>
+    <strong style="color: white"><i
+        class="fa-solid fa-circle-check fa-xl"
+      ></i></strong>
+    {{restoreUseMess}}
+  </div>
+{{/if}} 
+{{!-- thông báo xóa product --}}
+{{#if deleteProductMess}}
+  <div style="background-color: #f66359;" class="thongbao">
+    <span
+      class="nutdong"
+      onclick="this.parentElement.style.display='none';"
+    >&times;</span>
+    <strong style="color: white"><i
+        class="fa-solid fa-circle-check fa-xl"
+      ></i></strong>
+    {{deleteProductMess}}
+  </div>
+{{/if}} 
+{{!-- thông báo thêm products --}}
+{{#if addProductMess}}
+  <div class="thongbao">
+    <span
+      class="nutdong"
+      onclick="this.parentElement.style.display='none';"
+    >&times;</span>
+    <strong style="color: white"><i
+        class="fa-solid fa-circle-check fa-xl"
+      ></i></strong>
+    {{addProductMess}}
+  </div>
+{{/if}} 

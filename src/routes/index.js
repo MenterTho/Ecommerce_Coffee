@@ -4,9 +4,12 @@ const loginRouter = require("./logins");
 const newsRouter = require("./news");
 const siteRouter = require("./site");
 const coffeesRouter = require("./coffees");
+const adminController = require("./admins");
 
 function route(app) {
   // Các URL trên web
+  // [USE] login
+  app.use("/admin", adminController);
   // [USE] login
   app.use("/login", loginRouter);
   // [USE] news

@@ -65,22 +65,24 @@
                 class="dropdown-item"
                 href="/search"
               >Tìm kiếm</a></li>
-              {{#if session.user.access}}
+              {{#if userInfo.access}}
             <li><hr class="dropdown-divider bg-light" /></li>
-            <li><a title="Bản điều khiển" class="dropdown-item" href="#">Admin
+            <li><a title="Bản điều khiển" class="dropdown-item" href="/admin">Admin
                 dashboard</a></li>
             {{/if}}
           </ul>
         </li>
       </ul>
-       <button
+      <a href="/shoping"><button
           title="Giỏ hàng"
           type="button"
           class="btn btn-outline-light me-2 btnCalo"
         >
           <i class="fa-solid fa-cart-shopping"></i>
-        </button>
-      {{#if session.user}}
+        </button></a>
+       
+      {{#if jwt_token}}
+      
       <div class="dropdown text-end">
         <a
           href="#"
@@ -90,7 +92,7 @@
           style="margin-right: 10px;"
         >
           <img 
-            src="{{session.user.image}}"
+            src="{{userInfo.image}}"
             alt="mdo"
             width="32"
             height="32"
@@ -99,11 +101,11 @@
         </a>
           <ul class="dropdown-menu text-small">
             <li><a class="dropdown-item dropimg_user" title="Trang cá nhân" href="/profile"><i class="fa-regular fa-user"></i> Trang cá nhân</a></li>
-            {{#unless session.user.access}}
+            {{#unless userInfo.access}}
             <li><a class="dropdown-item dropimg_user" href="#"><i class="fa-solid fa-truck"></i> Lịch sử mua hàng</a></li>
             {{/unless}}
             <li><hr class="dropdown-divider bg-dark" /></li>
-            <li><a id="logout" class="dropdown-item logout" href="#"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất </a></li>
+            <li><a data-bs-toggle="modal" data-bs-target="#logOutModal" class="dropdown-item logout" href="#"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất </a></li>
           </ul>
           {{else}}
       <div class="text-middle" style="margin-right: 10px; ">
@@ -134,3 +136,23 @@
     </div>
   </div>
 </nav>
+<!-- Modal -->
+<div class="modal fade" id="logOutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">LogOut ?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Bạn có chắc muốn đăng xuất không?
+      </div>
+      <form method="GET" action="/login/logOut">
+       <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+        <button type="submit" class="btn btn-danger">Yes</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

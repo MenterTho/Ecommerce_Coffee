@@ -8,14 +8,14 @@
               src="{{profile.image}}"
               alt="avatar"
               class="rounded-circle img-fluid"
-              style="width: 150px;"
+              style="width: 150px; "
             />
             <h5 class="my-3">{{profile.username}}</h5>
             <p class="text-muted mb-1"></p>
             <p class="text-muted mb-4"></p>
             <div class="d-flex justify-content-center mb-2">
-              <button type="button" class="btn btn-primary">Edit</button>
-              <button type="button" class="btn btn-outline-primary ms-1">Change
+          <button type="button" {{#if profile.access}} style="cursor: not-allowed;" {{/if}} class="btn btn-primary" {{#unless profile.access}} data-bs-toggle="modal" data-bs-target="#exampleModal" {{/unless}}>Edit profile</button>   
+          <button type="button" class="btn btn-outline-primary ms-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Change
                 image</button>
             </div>
           </div>
@@ -47,10 +47,11 @@
                 <p class="mb-0" style="font-weight: 700;">Password:</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">{{hashPassword profile.password}}
+                <p class="text-muted mb-0">{{profile.password}}
                 </p>
               </div>
             </div>
+            {{#unless profile.access}}
             <hr />
             <div class="row">
               <div class="col-sm-3">
@@ -69,6 +70,7 @@
                 <p class="text-muted mb-0">{{profile.address}}</p>
               </div>
             </div>
+            {{/unless}}
             <hr />
             <div class="row">
               <div class="col-sm-3">
@@ -86,8 +88,8 @@
               <div class="card-body">
                 <p class="mb-4"><span
                     class="text-primary font-italic me-1"
-                  >assigment</span>
-                  Project Status
+                  >Menu</span>
+                  Coffee cat
                 </p>
                 <p class="mb-1" style="font-size: .77rem;">Cà phê sữa</p>
                 <div class="progress rounded" style="height: 5px;">
@@ -154,8 +156,8 @@
               <div class="card-body">
                 <p class="mb-4"><span
                     class="text-primary font-italic me-1"
-                  >assigment</span>
-                  Project Status
+                  >Tea</span>
+                  Tea Cat
                 </p>
                 <p class="mb-1" style="font-size: .77rem;">Sinh tố bơ</p>
                 <div class="progress rounded" style="height: 5px;">
@@ -222,3 +224,110 @@
     </div>
   </div>
 </section>
+
+<!-- Modal (edit user) -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel" style="font-weight: 500;">Edit profile <i class="fa-solid fa-pen-to-square"></i></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form method="POST" action="/editUser?_method=PUT">
+      <div class="modal-body">
+        <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0" style="font-weight: 700;">Email:</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0"><input class="inputEdit" type="email" required name="email" id="email" value="{{profile.email}}"></p>
+              </div>
+          </div>
+           <hr />
+          <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0" style="font-weight: 700;">Phone:</p>
+              </div>
+              <div class="col-sm-9">
+                 <p class="text-muted mb-0"><input class="inputEdit" type="number" required name="phone" id="phone" value="{{profile.phone}}"></p>
+              </div>
+          </div>
+           <hr />
+          <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0" style="font-weight: 700;">Address:</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0"><input class="inputEdit" type="text" required name="address" id="address" value="{{profile.address}}"></p>
+              </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal (edit img) -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Upload image <i class="fa-solid fa-image"></i></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form method="POST" action="/editImage?_method=PUT" enctype="multipart/form-data">
+        <div class="modal-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0" style="font-weight: 700;">Upload your image:</p>
+              </div>
+              <div class="col-sm-9">
+                 <input type="file" required name="image" id="name" accept="image/*">
+              </div>
+          </div>
+      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{{#if updateEditMess}}
+  <div class="thongbao">
+    <span
+      class="nutdong"
+      onclick="this.parentElement.style.display='none';"
+    >&times;</span>
+    <strong style="color: white"><i
+        class="fa-solid fa-circle-check fa-xl"
+      ></i></strong>
+    {{updateEditMess}}
+  </div>
+{{/if}}
+{{#if email_errMess}}
+  <div style="background-color: #fea92a;" class="thongbao">
+    <span
+      class="nutdong"
+      onclick="this.parentElement.style.display='none';"
+    >&times;</span>
+    <strong style="color: white;"><i class="fa-solid fa-circle-info fa-xl"></i></strong>
+    {{email_errMess}}
+  </div>
+{{/if}}
+{{#if phone_errMess}}
+  <div style="background-color: #fea92a;" class="thongbao">
+    <span
+      class="nutdong"
+      onclick="this.parentElement.style.display='none';"
+    >&times;</span>
+    <strong style="color: white;"><i class="fa-solid fa-circle-info fa-xl"></i></strong>
+    {{phone_errMess}}
+  </div>
+{{/if}}

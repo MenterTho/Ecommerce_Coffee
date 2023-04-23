@@ -1,26 +1,227 @@
 <div class="mt-4">
   <div class="row">
-    {{! Luu ý: phần /coffees phải trùng với tên bên file index bên routes }}
-    {{#each menu}}
-      <div class="col-sm-6 col-lg-4">
-        <div class="card card-course-item">
-          <a href="/coffees/{{this.slug}}">
-            <img
-              class="card-img-top"
-              src="{{this.image}}"
-              alt="Card image cap"
-            />
+    <div class="col-xl-3">
+      <div class="category">
+
+        <div class="flex-shrink-0 p-3" style="width: 280px;">
+          <a
+            href="/"
+            class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom font-menu"
+          >
+            <span class="fs-3 fw-semibold">
+              <i class="fa-solid fa-mug-hot"></i>
+              Menu
+            </span>
           </a>
-          <div class="card-body">
-            <a class="slug" href="/coffees/{{this.slug}}">
-              <h5 class="card-title">{{this.name}}</h5>
-            </a>
-            <p style="font-weight: 700;" class="card-text">{{this.price}}</p>
-            <a href="/coffees/{{this.slug}}" class="btn btn-primary">Mua ngay</a>
-          </div>
+          <ul class="list-styple ps-0">
+            <li class="mb-1 category--item--active">
+              <button
+                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed category--item-link"
+                data-bs-toggle="collapse"
+                data-bs-target="#home-collapse"
+                aria-expanded="true"
+              >
+                <i
+                  class="fa-solid fa-caret-up fa-rotate-90"
+                  style="margin-right: 4px;"
+                ></i>
+                Coffee
+              </button>
+              <div class="collapse show" id="home-collapse">
+
+                <ul class="btn-toggle-nav list-styple fw-normal pb-1 small">
+                  <li>
+                    <a
+                      href=""
+                      class="link-body-emphasis font_style d-inline-flex text-decoration-none rounded"
+                    >
+                      Coffee Viet Nam
+                    </a>
+                  </li>
+                  <li><a
+                      href="#"
+                      class="link-body-emphasis font_style d-inline-flex text-decoration-none rounded"
+                    >Machine Coffee</a></li>
+                  <li>
+                    <a
+                      href="#"
+                      class="link-body-emphasis font_style d-inline-flex text-decoration-none rounded"
+                    >Cold Brew</a>
+                  </li>
+                </ul>
+
+              </div>
+            </li>
+            <li class="mb-1 category--item--active">
+              <button
+                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed category--item-link"
+                data-bs-toggle="collapse"
+                data-bs-target="#dashboard-collapse"
+                aria-expanded="false"
+              >
+                <i
+                  class="fa-solid fa-caret-up fa-rotate-90"
+                  style="margin-right: 4px;"
+                ></i>
+                CloudFee
+              </button>
+              <div class="collapse" id="dashboard-collapse">
+                <ul class="btn-toggle-nav list-styple fw-normal pb-1 small">
+                  <li><a
+                      href="#"
+                      class="link-body-emphasis font_style d-inline-flex text-decoration-none rounded"
+                    >CloudFee</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="mb-1 category--item--active">
+              <button
+                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed category--item-link"
+                data-bs-toggle="collapse"
+                data-bs-target="#orders-collapse"
+                aria-expanded="false"
+              >
+                <i
+                  class="fa-solid fa-caret-up fa-rotate-90"
+                  style="margin-right: 4px;"
+                ></i>
+                Tea
+              </button>
+              <div class="collapse" id="orders-collapse">
+                <ul class="btn-toggle-nav list-styple fw-normal pb-1 small">
+                  <li>
+                    <a
+                      href="#"
+                      class="link-body-emphasis font_style d-inline-flex text-decoration-none rounded"
+                    >
+                      Fruit tea
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href=""
+                      class="link-body-emphasis font_style d-inline-flex text-decoration-none rounded"
+                    >
+                      Milk Tea Macchiato
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="mb-1 category--item--active">
+              <button
+                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed category--item-link"
+                data-bs-toggle="collapse"
+                data-bs-target="#account-collapse"
+                aria-expanded="false"
+              >
+                <i
+                  class="fa-solid fa-caret-up fa-rotate-90"
+                  style="margin-right: 4px;"
+                ></i>
+                Cake & Snack
+              </button>
+              <div class="collapse" id="account-collapse">
+                <ul class="btn-toggle-nav list-styple fw-normal pb-1 small">
+                  <li>
+                    <a
+                      href="#"
+                      class="link-body-emphasis font_style d-inline-flex text-decoration-none rounded"
+                    >
+                      Saltine Crackers
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="link-body-emphasis font_style d-inline-flex text-decoration-none rounded"
+                    >
+                      Cookie
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="link-body-emphasis font_style d-inline-flex text-decoration-none rounded"
+                    >
+                      Snack
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="border-top my-3"></li>
+            <li class="mb-1 category--item--active">
+
+              <div class="video-container">
+                <video autoplay muted loop>
+                  <source src="i_dWusLTXXU&t=3s/video-mp4/Video2.mp4" />
+                </video>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
-    {{/each}}
+      <div class="animation-coffee">
+
+      </div>
+
+    </div>
+
+    <div class="col-xl-9">
+      <div id="content">
+        <div class="row row-cols-1 row-cols-md-4 g-4" style="margin-top: 48px;">
+          {{#each menu}}
+            <div class="col">
+              <div class="card h-100 shadow p-3 bg-white rounded">
+                <a href="/coffees/{{this.slug}}">
+                  <img
+                    src="{{this.image}}"
+                    class="card-img-top"
+                    alt="{{this.name}}"
+                  />
+                </a>
+                <div class="card-body">
+                  <a
+                    href="/coffees/{{this.slug}}"
+                    style="text-decoration: none;"
+                    class="animation"
+                  >
+                    <h5 class="card-title">{{this.name}}</h5>
+                  </a>
+                  <p class="card-text">{{this.price}}</p>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!--page-->
+  <div class="mt-4">
+    <div class="phone-icon-animation">
+      <div class="pulse1"></div>
+      <div class="pulse2"></div>
+      <div class="icon"></div>
+    </div>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+        </li>
+        <li class="page-item"><a class="page-link" href="/products">1</a></li>
+        <li class="page-item"><a
+            class="page-link"
+            href="/user?page=2"
+          >2</a></li>
+        <li class="page-item"><a
+            class="page-link"
+            href="/user?page=3S"
+          >3</a></li>
+      </ul>
+    </nav>
 
   </div>
 </div>

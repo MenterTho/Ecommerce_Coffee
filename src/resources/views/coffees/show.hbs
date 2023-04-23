@@ -1,87 +1,94 @@
-<div class="p-4 p-md-5 mb-4 rounded bg-info">
-    <div class="col-md-6 px-0">
-      <h1 class="display-4 fst-italic text-light">{{coffee.name}}</h1>
-      <p class="lead my-3 text-light">{{coffee.description}}</p>
-      <p class="lead mb-0"><a href="#" class="text-dark fw-bold">Continue reading...</a></p>
-    </div>
-  </div>
+<div class="mt-4">
+  <form method="POST" action="/coffees/store">
+    <div class="row">
+      <div class="col-lg-5">
+        <img
+          style="  border-radius: 50px 20px;"
+          class="card-img-top"
+          src="{{coffee.image}}"
+          alt="{{coffee.name}}"
+        />
+        <input
+          type="text"
+          name="image"
+          class="form-control"
+          style="display: none;"
+          value="{{coffee.image}}"
+        />
+      </div>
+      <div class="col-lg-7">
+        <div class="buy-coffee">
+          <div class="card-name" name="name">
+            <h2>{{coffee.name}}</h2>
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              style="display: none;"
+              value="{{coffee.name}}"
+            />
+          </div>
+          <div class="card-text" style="font-size: 30px">
+            <span>{{coffee.price}}</span>
+            <input
+              type="text"
+              name="price"
+              class="form-control"
+              style="display: none;"
+              value="{{coffee.price}}"
+            />
+          </div>
+          <hr style="border: none; border-top: 3px dotted black" />
+          <div class="option-size" style="width:500px">
+            <div class="font-size">
+              <p>Chọn size (bắt buộc)</p>
+            </div>
 
-  <div class="row mb-2">
-    <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary">World</strong>
-          <h3 class="mb-0">{{coffee.name}} World</h3>
-          <div class="mb-1 text-body-secondary">Nov 12</div>
-          <p class="card-text mb-auto">{{coffee.description}}</p>
-          <a href="#" class="stretched-link">Continue reading</a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <img  class="bd-placeholder-img" width="200" height="250"  src="{{coffee.image}}" ></img>
+            <div class="product-option">
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                name="size"
+              >
+                <option selected>Thêm một loại tùy chọn</option>
+                <option value="Nhỏ">Nhỏ</option>
+                <option value="Vừa">Vừa</option>
+              </select>
+            </div>
+
+            <hr style="border: none; border-top: 3px dotted black" />
+            <div class="form-outline">
+              <label class="form-label">Số Lượng</label>
+              <input
+                type="number"
+                name="quality"
+                class="form-control"
+                min="0"
+                max="100"
+              />
+            </div>
+            <hr style="border: none; border-top: 3px dotted black" />
+          </div>
+          <div class="product-to-container">
+            <a href=" ">
+              <button type="submit" class="btn btn-primary"><i
+                  class="fa-solid fa-truck"
+                ></i>Thêm vào giỏ hàng</button>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-success">Design</strong>
-          <h3 class="mb-0">{{coffee.name}} Design</h3>
-          <div class="mb-1 text-body-secondary">Nov 11</div>
-          <p class="mb-auto">{{coffee.description}}</p>
-          <a href="#" class="stretched-link">Continue reading</a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <img  class="bd-placeholder-img" width="200" height="250"  src="{{coffee.image}}" ></img>
-
-        </div>
-      </div>
+    <hr style="border: none; border-top: 4px dotted black" />
+    <div class="describe">
+      <h4 class="Product_Description">Mô tả sản phẩm</h4>
+      <p
+        class="Description_text"
+        style="font-size: 20px; font-family: monospace;"
+      ><i>{{coffee.description}}</i></p>
     </div>
-     <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-secondary">Design</strong>
-          <h3 class="mb-0">{{coffee.name}} Design</h3>
-          <div class="mb-1 text-body-secondary">Nov 11</div>
-          <p class="mb-auto">{{coffee.description}}</p>
-          <a href="#" class="stretched-link">Continue reading</a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <img  class="bd-placeholder-img" width="200" height="250"  src="{{coffee.image}}" ></img>
+    <hr style="border: none; border-top: 4px dotted black" />
 
-        </div>
-      </div>
-    </div>
-     <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-warning ">Design</strong>
-          <h3 class="mb-0">{{coffee.name}} Design</h3>
-          <div class="mb-1 text-body-secondary">Nov 11</div>
-          <p class="mb-auto">{{coffee.description}}</p>
-          <a href="#" class="stretched-link">Continue reading</a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <img  class="bd-placeholder-img" width="200" height="250"  src="{{coffee.image}}" ></img>
+  </form>
 
-        </div>
-      </div>
-    </div>
-  </div>
-
- 
-
-     
-
-     
-        
-
-      
-
-    
-
-
-     
-
-    
-
-</main>
+</div>

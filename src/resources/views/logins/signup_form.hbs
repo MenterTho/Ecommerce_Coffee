@@ -1,0 +1,117 @@
+<main>
+  <div class="box">
+    <div class="inner-box">
+      <div class="forms-wrap">       
+        {{!-- Form singUp --}}
+        <form method="POST" action="/login/signupUser" autocomplete="off" class="sign-in-form">
+         <a  style="text-decoration: none;"href="/">
+            <div  class="logo">
+             <img
+              src="https://cdn-icons-png.flaticon.com/512/2173/2173478.png"
+              alt="easyclass"
+            />
+            <h4>Coffee Cat</h4>
+          </div>
+         
+         </a> 
+          <div class="heading">
+            <h2>Get Started</h2>
+            <h6>Already have an account?</h6>
+            <a href="/login/" class="toggle">Sign in</a>
+          </div>
+
+          <div class="actual-form">
+            <div class="input-wrap">
+              <input
+                type="text"
+                minlength="4"
+                class="input-field"
+                autocomplete="off"
+                required
+                value="{{username}}" 
+                name="username"
+                id="username"
+              />
+              <label>{{#if user_ex}} <span class="err">{{user_ex}}</span>  {{else}} Name {{/if}}</label>
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="email"
+                class="input-field"
+                autocomplete="off"
+                required
+                 value="{{email}}"
+                name="email"
+                id="email"
+              />
+              <label>{{#if email_ex}} <span class="err">{{email_ex}}</span> {{else}} Email {{/if}}</label>
+            </div>
+
+            <div class="input-wrap">
+              <input
+                type="password"
+                minlength="4"
+                class="input-field"
+                autocomplete="off"
+                required
+                 value="{{password}}" 
+                name="password"
+                id="password"
+              />
+              <label>Password</label>
+            </div>
+            <div class="input-wrap">
+              <input
+                type="password"
+                minlength="4"
+                class="input-field"
+                autocomplete="off"
+                required
+                id="confirm_password"
+               value="{{confirm_password}}" 
+                name="confirm_password"
+              />
+              <label>{{#if cf_pass_err }} <span class="err">{{cf_pass_err}}</span> {{else}} Confirm Password {{/if}}</label>
+            </div>
+            </div>
+      <div class="form-check">
+         <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault">
+               <p class="text">Xem mật khẩu</p>
+          </div>
+            <input type="submit" value="Sign Up" class="sign-btn" />
+            <p class="text">
+              By signing up, I agree to the
+              <a href="#">Terms of Services</a>
+              and
+              <a href="#">Privacy Policy</a>
+            </p>
+          </div>
+        </form>
+      </div>
+      <div class="carousel">
+        <div class="images-wrapper">
+          <img
+            src="https://img.freepik.com/premium-vector/funny-black-kawaii-sitting-red-cup-white-background-with-heart-vector-illustration-valentines-day-perfect-web-banner-site-valentine-day-banner-greeting-card-poster-t-shirt-print_255491-576.jpg?size=626&ext=jpg&ga=GA1.1.1887643554.1680234593&semt=ais"
+            class="image img-1 show"
+            alt=""
+          />
+        </div>
+        <div class="text-slider">
+          <div class="text-wrap">
+            <div class="text-group">
+              <h2></h2>
+              <h2></h2>
+              <h2></h2>
+            </div>
+          </div>
+          <div class="bullets">
+            <span class="active" data-value="1"></span>
+            <span data-value="2" ></span>
+            <span data-value="3"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
