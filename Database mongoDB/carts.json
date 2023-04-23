@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "6444d3fd9b40ac2c2638a32c"
+  },
+  "name": "test",
+  "image": "upload\\man.png",
+  "price": "30.000đ - 40.000đ",
+  "quality": "2",
+  "size": "Thêm một loại tùy chọn",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6444d5898b1b9c42f27182cb"
+  },
+  "name": "Cà Phê Đen Đá",
+  "image": "//product.hstatic.net/1000075078/product/1639377797_ca-phe-den-da_05253f78c67549cbb63870af01ae6a21_large.jpg",
+  "price": "29.000 đ",
+  "quality": "2",
+  "size": "Nhỏ",
+  "__v": 0
+}]

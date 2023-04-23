@@ -1,0 +1,235 @@
+[{
+  "_id": {
+    "$oid": "642652c59402c44046b0a093"
+  },
+  "name": "Product",
+  "description": "Gói cà phê là một dịch vụ được cung cấp tại quán cà phê, cho phép khách hàng có thể mua cà phê theo dạng gói và mang đi sử dụng tại nhà hoặc văn phòng.",
+  "image": "https://img.freepik.com/premium-psd/coffee-packaging-sachet-mockup-design_410639-2.jpg",
+  "slug": "Coffee-Product",
+  "price": "45.000đ",
+  "size": "Small, Medium, Large"
+},{
+  "_id": {
+    "$oid": "642653839402c44046b0a094"
+  },
+  "name": "Colombian",
+  "description": "Gói cà phê là một dịch vụ được cung cấp tại quán cà phê, cho phép khách hàng có thể mua cà phê theo dạng gói và mang đi sử dụng tại nhà hoặc văn phòng.",
+  "image": "https://img.freepik.com/premium-vector/hand-drawn-coffee-label-design-template_23-2149814308.jpg?w=740",
+  "slug": "Coffee-Colombian",
+  "price": "60.000đ",
+  "size": "Small, Medium"
+},{
+  "_id": {
+    "$oid": "642655cd9402c44046b0a095"
+  },
+  "name": "Packaging",
+  "description": "Gói cà phê là một dịch vụ được cung cấp tại quán cà phê, cho phép khách hàng có thể mua cà phê theo dạng gói và mang đi sử dụng tại nhà hoặc văn phòng.",
+  "image": "https://img.freepik.com/free-psd/cafe-psd-mockup-with-coffee-bean-pouch-paper-cup_53876-116367.jpg?size=626&ext=jpg&ga=GA1.2.1887643554.1680234593&semt=ais",
+  "slug": "Coffee-Packaging",
+  "price": "35.000đ",
+  "size": "Small, Large"
+},{
+  "_id": {
+    "$oid": "64280d761f4626596f41de8b"
+  },
+  "name": "Caramel Macchiato Đá",
+  "description": "Khuấy đều trước khi dùng Caramel Macchiato sẽ mang đến sự bất ngờ thú vị khi có hương thơm béo ngậy của bọt sữa, sữa tươi, vị đắng thanh tao của Espresso hảo hạng và vị ngọt đậm đà của sốt Caramel gói gọn trong ly cà phê.",
+  "image": "//product.hstatic.net/1000075078/product/caramel-macchiato_143623_1408435b07de43748e17087b4bb31696_large.jpg",
+  "slug": "Caramel",
+  "level ": "Trình Độ Bro Vip",
+  "price": "55.000 đ",
+  "type": "Ca Phe May",
+  "quality": "",
+  "size": "Nhỏ",
+  "size2": "Vừa"
+},{
+  "_id": {
+    "$oid": "64284d221f4626596f41de8c"
+  },
+  "name": "Caramel Macchiato Nóng",
+  "description": "Caramel Macchiato sẽ mang đến một sự ngạc nhiên thú vị khi vị thơm béo của bọt sữa, sữa tươi, vị đắng thanh thoát của cà phê Espresso hảo hạng và vị ngọt đậm của sốt caramel được gói gọn trong một tách cà phê.",
+  "image": "//product.hstatic.net/1000075078/product/caramelmacchiatonong_168039_ec0391c8b399425494aaa9f38728772f_large.jpg",
+  "slug": "Milk Coffee",
+  "price": "55.000 đ",
+  "type": "Ca Phe May",
+  "quality": "",
+  "size": ""
+},{
+  "_id": {
+    "$oid": "642ee6bb68a02afdb66107dc"
+  },
+  "name": "Latte Đá",
+  "description": "Một sự kết hợp tinh tế giữa vị đắng cà phê Espresso nguyên chất hòa quyện cùng vị sữa nóng ngọt ngào, bên trên là một lớp kem mỏng nhẹ tạo nên một tách cà phê hoàn hảo về hương vị lẫn nhãn quan.",
+  "image": "//product.hstatic.net/1000075078/product/latte-da_438410_a2e1f7ce1a67426997c20f2d9da269a0_large.jpg",
+  "slug": "ấdasudhsad",
+  "price": "55.000 đ",
+  "type": "Ca Phe May",
+  "quality": "",
+  "size": ""
+},{
+  "_id": {
+    "$oid": "642ee9c568a02afdb66107dd"
+  },
+  "name": "Latte Nóng",
+  "description": "Một sự kết hợp tinh tế giữa vị đắng cà phê Espresso nguyên chất hòa quyện cùng vị sữa nóng ngọt ngào, bên trên là một lớp kem mỏng nhẹ tạo nên một tách cà phê hoàn hảo về hương vị lẫn nhãn quan.",
+  "slug": "Latte Nóng",
+  "image": "//product.hstatic.net/1000075078/product/latte_851143_fef741ed7aab473db605ea2699f4c2ff_large.jpg",
+  "price": "55.000 đ",
+  "type": "Ca Phe May",
+  "quality": "",
+  "size": ""
+},{
+  "_id": {
+    "$oid": "6432697b24f78d5c04bc31c8"
+  },
+  "name": "Bạc Sỉu",
+  "description": "Bạc sỉu chính là \"Ly sữa trắng kèm một chút cà phê\". Thức uống này rất phù hợp những ai vừa muốn trải nghiệm chút vị đắng của cà phê vừa muốn thưởng thức vị ngọt béo ngậy từ sữa.",
+  "image": "//product.hstatic.net/1000075078/product/1639377904_bac-siu_2a46d27857f04a37adb350321d8b218f_large.jpg",
+  "slug": "VN",
+  "price": "29.000 đ",
+  "type": "Ca Phe VN",
+  "quality": "",
+  "size": ""
+},{
+  "_id": {
+    "$oid": "6433556970b8b6a63ebb6d7d"
+  },
+  "name": "Đường Đen Marble Latte",
+  "description": "Sản phẩm không thể thay đổi độ ngọt - Khuấy đều trước khi sử dụng Nếu chuộng vị cà phê đậm đà, bùng nổ và thích vị đường đen ngọt thơm, Đường Đen Sữa Đá đích thị là thức uống dành cho bạn. Không chỉ giúp bạn tỉnh táo buổi sáng, Đường Đen Sữa Đá còn hấp dẫn đến ngụm cuối cùng bởi thạch cà phê giòn dai, nhai cực cuốn.",
+  "image": "//product.hstatic.net/1000075078/product/1680709921_tagnew-dd-latte-2_f4b06df22e544435bb3c8bb5001a810e_large.jpg",
+  "slug": "Đường Đen Marble Latte",
+  "price": "55.000 đ",
+  "type": "Ca Phe VN",
+  "quality": "",
+  "size": ""
+},{
+  "_id": {
+    "$oid": "643355e670b8b6a63ebb6d7f"
+  },
+  "name": "Cà Phê Đen Đá",
+  "description": "Không ngọt ngào như Bạc sỉu hay Cà phê sữa, Cà phê đen mang trong mình phong vị trầm lắng, thi vị hơn. Người ta thường phải ngồi rất lâu mới cảm nhận được hết hương thơm ngào ngạt, phảng phất mùi cacao và cái đắng mượt mà trôi tuột xuống vòm họng.",
+  "image": "//product.hstatic.net/1000075078/product/1639377797_ca-phe-den-da_05253f78c67549cbb63870af01ae6a21_large.jpg",
+  "slug": "Cà Phê Đen Đá",
+  "price": "29.000 đ",
+  "type": "Ca Phe VN",
+  "quality": "",
+  "size": ""
+},{
+  "_id": {
+    "$oid": "6433685c70b8b6a63ebb6d80"
+  },
+  "name": "The Coffee House Sữa Đá",
+  "description": "Thức uống giúp tỉnh táo tức thì để bắt đầu ngày mới thật hứng khởi. Không đắng khét như cà phê truyền thống, The Coffee House Sữa Đá mang hương vị hài hoà đầy lôi cuốn. Là sự đậm đà của 100% cà phê Arabica Cầu Đất rang vừa tới, biến tấu tinh tế với sữa đặc và kem sữa ngọt ngào cực quyến rũ. Càng hấp dẫn hơn với topping thạch 100% cà phê nguyên chất giúp giữ trọn vị ngon đến ngụm cuối cùng.",
+  "image": "//product.hstatic.net/1000075078/product/1675355354_bg-tch-sua-da-no_8f9767ab3c814440ae4833621ad2fa74_large.jpg",
+  "slug": "The Coffee House Sữa Đá",
+  "price": "39.000 đ",
+  "type": "Ca Phe VN",
+  "quality": "",
+  "size": ""
+},{
+  "_id": {
+    "$oid": "643368ba70b8b6a63ebb6d81"
+  },
+  "name": "CloudFee Hạnh Nhân Nướng",
+  "description": "Vị đắng nhẹ từ cà phê phin truyền thống kết hợp Espresso Ý, lẫn chút ngọt ngào của kem sữa và lớp foam trứng cacao, nhấn thêm hạnh nhân nướng thơm bùi, kèm topping thạch cà phê dai giòn mê ly. Tất cả cùng quyện hoà trong một thức uống làm vị giác \"thức giấc\", thơm ngon hết nấc.",
+  "image": "//product.hstatic.net/1000075078/product/1675357918_cloudfee-hanh-nhan-nuong-min_2d33a80aea6c402ab34ce74cdcc9891e_large.png",
+  "slug": "CloudFee Hạnh Nhân Nướng",
+  "price": "49.000 đ",
+  "type": "Cloud",
+  "quality": "",
+  "size": ""
+},{
+  "_id": {
+    "$oid": "643369be70b8b6a63ebb6d82"
+  },
+  "name": "Trà Long Nhãn Hạt Sen",
+  "description": "Thức uống mang hương vị của nhãn, của sen, của trà Oolong đầy thanh mát cho tất cả các thành viên trong dịp Tết này. An lành, thư thái và đậm đà chính là những gì The Coffee House mong muốn gửi trao đến bạn và gia đình.",
+  "image": "//product.hstatic.net/1000075078/product/1649378747_tra-sen-nhan_3c1f76564f2f424ba0f60aab2f4f5c1a_large.jpg",
+  "slug": "Trà Long Nhãn Hạt Sen",
+  "price": "49.000 đ",
+  "type": "Tea",
+  "quality": "",
+  "size": ""
+},{
+  "_id": {
+    "$oid": "643369e470b8b6a63ebb6d83"
+  },
+  "name": "Trà Đen Macchiato",
+  "description": "Trà đen được ủ mới mỗi ngày, giữ nguyên được vị chát mạnh mẽ đặc trưng của lá trà, phủ bên trên là lớp Macchiato \"homemade\" bồng bềnh quyến rũ vị phô mai mặn mặn mà béo béo.",
+  "image": "//product.hstatic.net/1000075078/product/tra-den-matchiato_430281_11f65fe567c5407d8b321be2be4aeac2_large.jpg",
+  "slug": "Trà Đen Macchiato",
+  "price": "55.000 đ",
+  "type": "Tea",
+  "quality": "",
+  "size": ""
+},{
+  "_id": {
+    "$oid": "64336aba70b8b6a63ebb6d84"
+  },
+  "name": "Bánh Mì Gậy Gà Kim Quất",
+  "description": "Phiên bản nâng cấp với trọng lượng tăng 80% so với bánh mì que thông thường, đem đến cho bạn bữa ăn nhanh gọn mà vẫn đầy đủ dinh dưỡng. Cắn một miếng là mê mẩn bởi vỏ bánh nướng giòn rụm, nhân đậm vị với từng miếng thịt gà mềm, ướp sốt kim quất chua ngọt, thơm nức đặc trưng. Càng \"đúng bài\" hơn khi thưởng thức kèm Cà phê đượm vị hoặc trà Hi-Tea thanh mát.",
+  "image": "//product.hstatic.net/1000075078/product/1669737009_banh-mi-gay-ga-kim-quat_ce3a387d0be24b06895c4fa4db97699c_large.png",
+  "slug": "Bánh Mì Gậy Gà Kim Quất",
+  "price": "25.000 đ",
+  "type": "Saltine",
+  "quality": "",
+  "size": ""
+},{
+  "_id": {
+    "$oid": "64336b2270b8b6a63ebb6d85"
+  },
+  "name": "Mochi Kem Phúc Bồn Tử",
+  "description": "Bao bọc bởi lớp vỏ Mochi dẻo thơm, bên trong là lớp kem lạnh cùng nhân phúc bồn tử ngọt ngào. Gọi 1 chiếc Mochi cho ngày thật tươi mát. Sản phẩm phải bảo quán mát và dùng ngon nhất trong 2h sau khi nhận hàng.",
+  "image": "//product.hstatic.net/1000075078/product/1643102019_mochi-phucbontu_4dc7ec48bb4e4e02acf1e1ceced64b75_large.jpg",
+  "slug": "Mochi Kem Phúc Bồn Tử",
+  "price": "19.000 đ",
+  "type": "Cookie",
+  "quality": "",
+  "size": ""
+},{
+  "_id": {
+    "$oid": "64336b6d70b8b6a63ebb6d86"
+  },
+  "name": "Mít Sấy",
+  "description": "Mít sấy khô vàng ươm, giòn rụm, giữ nguyên được vị ngọt lịm của mít tươi.",
+  "image": "//product.hstatic.net/1000075078/product/mit-say_666228_f8e2606dc7334c92a071435615733d10_large.jpg",
+  "slug": "Mít Sấy",
+  "price": "20.000 đ",
+  "type": "Snack",
+  "quality": "",
+  "size": ""
+},{
+  "_id": {
+    "$oid": "6441210ccac88011ab05755f"
+  },
+  "name": "Caramel Macchiato Nóng",
+  "image": "//product.hstatic.net/1000075078/product/caramelmacchiatonong_168039_ec0391c8b399425494aaa9f38728772f_large.jpg",
+  "price": "55.000 đ",
+  "quality": "1",
+  "size": "",
+  "createdAt": {
+    "$date": "2023-04-20T11:25:00.951Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-20T11:25:00.951Z"
+  },
+  "slug": "caramel-macchiato-nong",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644122fda5fbe1ac42c378b2"
+  },
+  "name": "Latte Đá",
+  "image": "//product.hstatic.net/1000075078/product/latte-da_438410_a2e1f7ce1a67426997c20f2d9da269a0_large.jpg",
+  "price": "55.000 đ",
+  "quality": "1",
+  "size": "",
+  "createdAt": {
+    "$date": "2023-04-20T11:33:17.231Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-20T11:33:17.231Z"
+  },
+  "slug": "latte-da",
+  "__v": 0
+}]
