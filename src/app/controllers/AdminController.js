@@ -30,8 +30,13 @@ class AdminController {
     } else if (req.session.addProduct) {
       req.session.addProduct = false;
       res.locals.addProductMess = "Thêm product thành công";
+    } else if (req.session.updateSuccess) {
+      req.session.updateSuccess = false;
+      res.locals.updateSuccessMess = "Update product thành công";
+    } else if (req.session.nameExist) {
+      req.session.nameExist = false;
+      res.locals.nameExistMess = "Tên product đã tồn tại";
     }
-
     if (token) {
       try {
         // Giải mã token và lấy thông tin userInfo từ payload của token
@@ -66,7 +71,6 @@ class AdminController {
       res.redirect("/admin/errorPage");
     }
   }
-
   // [GET] admin/errorPage
   errorPage(req, res) {
     res.render("404page", {
@@ -74,9 +78,9 @@ class AdminController {
       layout: "login",
     });
   }
-
   // [GET] admin/:id/editFromProducts
   editFromProducts(req, res) {
+    const title = "Edit products";
     Coffee.findOne({ _id: req.params.id })
       .then((product) => {
         if (!product) {
@@ -85,15 +89,17 @@ class AdminController {
         res.render("editProduct", {
           product: mongooseToObject(product),
           layout: "adminPage",
+          title,
         });
       })
       .catch((err) => {
         return res.status(500).json({ message: "Server error" });
       });
   }
-
   // [PUT] admin/:id/editProducts
   editProducts(req, res) {
+    const { filename } = req.file;
+    const imagePath = path.join("upload", filename);
     const { name, description, image, price, size } = req.body;
     const token = req.cookies.jwt_token;
     let userInfo;
@@ -118,17 +124,17 @@ class AdminController {
             existingCoffee &&
             existingCoffee._id.toString() !== req.params.id
           ) {
-            // req.session.name_err = true;
+            req.session.nameExist = true;
             return res.redirect("/admin");
           } else {
             // If the name is not in use, update the Coffee
             Coffee.findByIdAndUpdate(
               req.params.id,
-              { name, description, image, price, size },
+              { name, description, image: imagePath, price, size },
               { new: true }
             )
               .then(() => {
-                // req.session.updateSuccess = true;
+                req.session.updateSuccess = true;
                 return res.redirect("/admin");
               })
               .catch((err) => {
@@ -178,7 +184,6 @@ class AdminController {
         res.status(500).json({ message: "Đã có lỗi xảy ra khi lưu sản phẩm" });
       });
   }
-
   // [DELETE] admin/:id/lookUser
   lookUser(req, res, next) {
     req.session.lookUser = true;
@@ -186,7 +191,6 @@ class AdminController {
       .then(() => res.redirect("back"))
       .catch(next);
   }
-
   // [DELETE] admin/:id/deleteRealUser
   deleteRealUser(req, res, next) {
     req.session.deleteUser = true;
@@ -194,7 +198,6 @@ class AdminController {
       .then(() => res.redirect("back"))
       .catch(next);
   }
-
   // [DELETE] admin/:id/deleteProduct
   deleteProduct(req, res, next) {
     req.session.deleteProduct = true;
@@ -202,7 +205,6 @@ class AdminController {
       .then(() => res.redirect("back"))
       .catch(next);
   }
-
   // [PATCH] admin/:id/restoreUser
   restoreUser(req, res, next) {
     req.session.restoreUser = true;

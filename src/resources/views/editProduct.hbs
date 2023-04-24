@@ -3,7 +3,7 @@
     <div class="container h-100" >
       <div class="row d-flex justify-content-center align-items-center h-50 ">
         <div class="col-xl-9"></div>
-        <form method="POST" action="/admin/{{product._id}}/editProducts?_method=PUT">
+        <form method="POST" action="/admin/{{product._id}}/editProducts?_method=PUT" enctype="multipart/form-data">
           <div class="card bg-dark text-white"  style="border-radius: 15px;">
             <div class="card-body" >
               <div class="row align-items-center pt-4 pb-3 ">
@@ -57,9 +57,9 @@
                 </div>
                 <div class="col-md-9 pe-5">
                   <input
-                    type="text"
-                    required
+                    type="file"
                     name="image"
+                    accept="image/*"
                     value="{{product.image}}"
                     class="form-control form-control-lg"
                   />
@@ -77,7 +77,7 @@
                     required
                     name="description"
                     placeholder="Mô tả sản phẩm"
-                  ></textarea>
+                  >{{product.description}}</textarea>
                 </div>
               </div>
               <hr class="mx-n3" />

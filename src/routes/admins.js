@@ -4,7 +4,7 @@ const adminController = require("../app/controllers/AdminController");
 const multer = require("multer");
 const storage = multer.diskStorage({
   destination: (req, file, res) => {
-    res(null, "src/public/upload/");
+    res(null, "src/public/upload");
   },
   filename: (req, file, res) => {
     res(null, file.originalname);
@@ -13,7 +13,11 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 // -----------------
 router.patch("/:id/restoreUser", adminController.restoreUser);
-router.put("/:id/editProducts", adminController.editProducts);
+router.put(
+  "/:id/editProducts",
+  upload.single("image"),
+  adminController.editProducts
+);
 router.post("/addProduct", upload.single("image"), adminController.addProduct);
 router.delete("/:id/deleteRealUser", adminController.deleteRealUser);
 router.delete("/:id/deleteProduct", adminController.deleteProduct);

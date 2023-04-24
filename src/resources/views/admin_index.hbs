@@ -330,7 +330,7 @@
                 <p class="mb-0" style="font-weight: 700;">Image:</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0"><input class="inputEdit" type="file" required name="image" id="" value=""></p>
+                <p class="text-muted mb-0"><input class="inputEdit" type="file" required accept= 'image/*' name="image" id="" value=""></p>
               </div>
           </div>
       </div>
@@ -495,5 +495,31 @@ input.addEventListener('input', () => {
         class="fa-solid fa-circle-check fa-xl"
       ></i></strong>
     {{addProductMess}}
+  </div>
+{{/if}}  
+{{!-- Thông báo cập nhật sản phẩm thành công --}}
+{{#if updateSuccessMess}}
+  <div class="thongbao">
+    <span
+      class="nutdong"
+      onclick="this.parentElement.style.display='none';"
+    >&times;</span>
+    <strong style="color: white"><i
+        class="fa-solid fa-circle-check fa-xl"
+      ></i></strong>
+    {{updateSuccessMess}}
+  </div>
+{{/if}}
+{{!-- Thông báo tên sản phẩm đã tồn tại --}}
+{{#if nameExistMess}}
+  <div style="background-color: #f66359;" class="thongbao">
+    <span
+      class="nutdong"
+      onclick="this.parentElement.style.display='none';"
+    >&times;</span>
+    <strong style="color: white"><i
+        class="fa-solid fa-circle-check fa-xl"
+      ></i></strong>
+    {{nameExistMess}}
   </div>
 {{/if}} 

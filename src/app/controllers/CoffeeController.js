@@ -5,12 +5,32 @@ class CoffeeController {
   // [GET] /:slug
   show(req, res, next) {
     const title = "Infomations";
-    // res.locals.session = req.session;
+    const token = req.cookies.jwt_token;
+    let userInfo;
+    if (token) {
+      try {
+        // Giải mã token và lấy thông tin userInfo từ payload của token
+        userInfo = jwt.verify(token, "secret_key");
+        // Kiểm tra đăng nhập
+        res.locals.Inlogin = true;
+        // Tạo thông báo khi token hết hạn
+        req.session.token = true;
+      } catch (error) {
+        console.error(error);
+      }
+    } else if (req.session.token) {
+      // Phiên đăng nhập hết hạn
+      req.session.relogin = true;
+      res.clearCookie("jwt_token");
+      res.redirect("/login");
+    }
     Coffee.findOne({ slug: req.params.slug })
       .then((coffee) => {
         res.render("coffees/show", {
           title,
           coffee: mongooseToObject(coffee),
+          jwt_token: token,
+          userInfo,
         });
       })
       .catch(next);

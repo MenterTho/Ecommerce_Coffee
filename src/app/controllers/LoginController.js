@@ -37,13 +37,11 @@ class LoginController {
       layout: "login",
     });
   }
-
   // [GET] /login/signUp
   signUp(req, res) {
     const title = "Sign Up";
     res.render("logins/signup_form", { title, layout: "login" });
   }
-
   // [POST] /login/postLogin
   async postLogin(req, res) {
     const title = "Login";
@@ -98,7 +96,6 @@ class LoginController {
         .json({ success: false, message: "Internal Server Error" });
     }
   }
-
   // ------------------------
   // [POST] /login/signupUser
   async signupUser(req, res, next) {

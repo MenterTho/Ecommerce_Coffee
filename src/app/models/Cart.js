@@ -11,4 +11,5 @@ const Cart = new Schema({
   size: { type: String },
   size2: { type: String },
 });
+
 module.exports = mongoose.model("Cart", Cart);

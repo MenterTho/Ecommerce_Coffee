@@ -54,7 +54,6 @@ class SiteController {
       });
     }
   }
-
   // [GET] /search
   search(req, res) {
     const title = "Search";
@@ -68,7 +67,6 @@ class SiteController {
       gioitinh,
     });
   }
-
   // [GET] /product
   product(req, res, next) {
     // res.locals.session = req.session;
@@ -103,7 +101,6 @@ class SiteController {
       })
       .catch(next);
   }
-
   // [GET] /profileUser/:id
   profile(req, res, next) {
     const title = "Profile";
@@ -256,7 +253,6 @@ class SiteController {
     }
   }
   // Sản phẩm
-
   //[GET] page
   page(req, res, next) {
     var page = req.query.page;
@@ -306,9 +302,9 @@ class SiteController {
       });
     }
   }
-
   //[Get] create cart
   shoping(req, res, next) {
+    const title = "Cart";
     const token = req.cookies.jwt_token;
     let userInfo;
     if (token) {
@@ -334,12 +330,12 @@ class SiteController {
           carts: mutipleMogooseToObject(carts),
           jwt_token: token,
           userInfo,
+          title,
         }); // render trang shoping content là từ column trong sql carts
       })
       .catch(next);
     //lay du lieu tu database ra clients
   }
-
   //[delete] /shoping/:id
   async destroy(req, res, next) {
     try {
